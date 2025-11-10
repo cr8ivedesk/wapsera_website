@@ -16,6 +16,32 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                primary: "var(--color-primary)",
+                secondary: "var(--color-secondary)",
+                accent: "var(--color-accent)",
+                dark: "var(--color-dark)",
+                light: "var(--color-light)",
+            },
+            container: {
+                center: true,
+                padding: '1rem',
+                screens: {
+                    sm: "540px",
+                    md: "720px",
+                    lg: "960px",
+                    xl: "1140px",
+                    "2xl": "1320px",
+                },
+            },
+            screens: {
+                xs: "480px",
+                sm: "640px",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
+                "2xl": "1536px",
+            },
         },
     },
 
