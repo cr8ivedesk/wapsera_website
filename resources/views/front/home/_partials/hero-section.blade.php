@@ -6,13 +6,15 @@
 
         <a href="#" class="underline decoration-[#89D51B] "><h5 class="text-[#89D51B] mb-4">Watch Demo Video</h5></a>
 
-        <p class="font-medium mb-2">No credit card required.</p>
+        <p class="font-medium mb-4">No credit card required.</p>
 
         <button class="button-primary">
-            <span>Start Free Account</span>
+            <h5>Start Free Account</h5>
             <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
         </button>
     </div>
 
-    <img src="/assets/images/home-page/hero-section.png" alt="" class="h-[80vh] rounded-[4.5rem]" />
+    <div class="flex justify-end">
+        <img src="/assets/images/home-page/hero-section.png" alt="" class="h-[80vh] rounded-[4.5rem]" />
+    </div>
 </section>

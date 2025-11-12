@@ -19,7 +19,7 @@
 @endphp
 
 <section class="container">
-    <div class="mt-24">
+    <div class="mt-28">
         <h3 class="w-[40%] m-[0_auto] text-secondary text-center mb-2">More time for essentials via social media automation</h3>
         <p class="w-[60%] m-[0_auto] text-center">Stop letting social media management drain your time. With WapSera, manage all your platforms from one place, automate your posts, and focus on what really matters growing your brand.</p>
 
