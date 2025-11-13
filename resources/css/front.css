@@ -86,23 +86,23 @@ nav>div {
 }
 
 h1,.h1 {
-    @apply text-[52px] leading-[1.125] font-extrabold;
+    @apply 2xl:text-[3.25rem] xl:text-[2.5rem] text-4xl leading-[1.125] font-extrabold;
 }
 
 h2,.h2 {
-    @apply text-4xl font-extrabold;
+    @apply xl:text-4xl text-3xl font-extrabold;
 }
 
 h3,.h3 {
-    @apply text-3xl font-extrabold;
+    @apply xl:text-3xl text-2xl font-extrabold;
 }
 
 h4,.h4 {
-    @apply text-2xl font-bold;
+    @apply xl:text-2xl text-xl font-bold;
 }
 
 h5,.h5 {
-    @apply text-xl font-bold;
+    @apply xl:text-xl text-lg font-bold;
 }
 
 h6,.h6 {
