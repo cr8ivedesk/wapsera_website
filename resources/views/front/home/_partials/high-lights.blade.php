@@ -17,7 +17,7 @@
     ]
 @endphp
 <section class="container">
-    <div class="grid grid-cols-2 gap-12 px-20 py-24 bg-[#F9F6FF] rounded-[2rem] mt-28 mb-6 relative">
+    <div class="grid lg:grid-cols-2 grid-cols-1 flex-row-reverse gap-12 xl:px-20 md:px-12 px-6 xl:py-24 md:py-16 py-12 bg-[#F9F6FF] rounded-[2rem] mt-28 mb-6 relative">
         <img src="/assets/images/home-page/3-rectangle.svg" alt=""
             class="absolute top-[3.75rem] left-14 h-[5.5rem]" />
 
@@ -30,13 +30,13 @@
         <img src="/assets/images/home-page/intersect-cirecle.svg" 
             class="absolute bottom-[1.75rem] left-48 h-14" />
 
-        <div class="relative bg-[#ee7c57] px-8 py-6 rounded-3xl">
+        <div class="lg:order-1 order-2 relative bg-[#ee7c57] md:px-8 xs:px-6 px-4 md:py-6 py-4 rounded-3xl">
             <img
                 src="/assets/images/home-page/social-media-management.png" alt=""
-                class="w-full h-72 rounded-3xl" />
+                class="w-full lg:h-72 rounded-3xl" />
         </div>
 
-        <div class="flex flex-col justify-center">
+        <div class="lg:order-2 order-1 flex flex-col justify-center lg:text-start text-center">
             <div class="mb-4">
                 <span class="title-tag">Social media management</span>
             </div>
@@ -50,7 +50,7 @@
             </p>
 
             <div>
-                <button class="button-primary">
+                <button class="button-primary lg:m-auto m-[0_auto]">
                     <span>Learn More</span>
                     <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
                 </button>
@@ -58,9 +58,12 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
         @foreach ($highLights as $highLight)
-            <div class="px-8 pb-10 pt-20 rounded-[2rem] relative" style="background: {{ $highLight['bgColor'] }};">
+            <div
+                class="lg:px-8 px-6 lg:pb-10 pb-8 lg:pt-20 pt-16 rounded-[2rem] relative lg:text-start text-center" 
+                style="background: {{ $highLight['bgColor'] }};"
+            >
                 <img src="/assets/images/home-page/semi-circle.svg"
                     class="absolute bottom-[22rem] left-8 h-10" />
 
@@ -74,14 +77,14 @@
                 <p class="mb-4 text-sm">{{ $highLight['description'] }}</p>
 
                 <div>
-                    <button class="button-primary">
+                    <button class="button-primary lg:m-auto m-[0_auto]">
                         <span>Learn More</span>
                         <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
                     </button>
                 </div>
 
                 <div class="w-100 flex justify-center mt-14">
-                    <img src="{{ $highLight['image'] }}" class="h-72 rounded-[2rem]" />
+                    <img src="{{ $highLight['image'] }}" class="lg:h-72 sm:h-64 sm:rounded-[2rem] rounded-3xl" />
                 </div>
             </div>
         @endforeach

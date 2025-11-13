@@ -8,10 +8,10 @@
     @include('front.home._partials.key-points')
 
     {{-- High Lights --}}
-    {{-- @include('front.home._partials.high-lights') --}}
+    @include('front.home._partials.high-lights')
 
     {{-- Pricing Plan --}}
-    {{-- @include('front.home._partials.pricing-plan') --}}
+    @include('front.home._partials.pricing-plan')
 
     {{-- Section 6 --}}
     {{-- @include('front.home._partials.section-6') --}}
