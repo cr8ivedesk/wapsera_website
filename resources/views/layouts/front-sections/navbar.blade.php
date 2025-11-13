@@ -1,5 +1,5 @@
-<nav class="container my-8 py-5 px-8">
-    <div class="flex justify-between items-center">
+<nav class="container my-8">
+    <div class="flex justify-between items-center xl:py-5 py-6 px-8">
         <a href="{{ route('home-page') }}">
             <img src="/assets/images/logo.svg" alt="{{ env('APP_NAME') }}" class="h-8 w-full" />
         </a>
@@ -25,9 +25,15 @@
             </li>
         </ul>
 
-        <button class="button-primary">
-            <span>Try it for Free</span>
-            <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
-        </button>
+        <div class="lg:block hidden">
+            <button class="button-primary">
+                <span>Try it for Free</span>
+                <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
+            </button>
+        </div>
+
+        <a href="#" class="lg:hidden block">
+            <img src="/assets/images/menu-hamburger.svg" alt="" class="w-6 h-6" />
+        </a>
     </div>
 </nav>

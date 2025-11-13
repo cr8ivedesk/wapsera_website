@@ -54,11 +54,11 @@
 @endphp
 
 <div class="bg-secondary rounded-t-[3.75rem]">
-    <div class="container grid grid-cols-12 gap-8 py-24 border-b-[1px] border-[#1B1B1B]">
-        <div class="col-span-4">
-            <img src="/assets/images/white-logo.svg" class="w-60" />
+    <div class="container grid grid-cols-12 gap-y-8 py-24 border-b-[1px] border-[#1B1B1B]">
+        <div class="2xl:col-span-4 lg:col-span-3 col-span-12 lg:block flex lg:flex-col sm:flex-row flex-col justify-between items-center">
+            <img src="/assets/images/white-logo.svg" class="2xl:w-60 w-48" />
 
-            <div class="flex gap-4 mt-4">
+            <div class="flex gap-4 lg:mt-8 sm:mt-0 mt-4">
                 @foreach ($socialImages as $img)
                     <a href="#">
                         <img src="/assets/images/svg-icons/{{ $img }}" class="w-8 h-8" />
@@ -67,8 +67,12 @@
             </div>
         </div>
 
-        @foreach ($links as $link)
-            <div class="col-span-2">
+        @foreach ($links as $key => $link)
+            <div class="{{ 
+                    $key == 3 ? "2xl:col-span-2 lg:col-span-3 md:col-span-12 sm:col-span-6 col-span-12":
+                        "lg:col-span-2 md:col-span-4 sm:col-span-6 col-span-12"
+                }} sm:text-start text-center"
+            >
                 <h5 class="text-white mb-3">{{ $link['heading'] }}</h5>
 
                 <ul>

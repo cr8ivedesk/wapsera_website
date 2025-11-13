@@ -48,10 +48,10 @@ a:hover {
 }
 
 .button-primary {
-    @apply bg-primary text-secondary font-semibold py-3 px-6 rounded-full flex items-center gap-2;
+    @apply bg-primary text-secondary xl:text-base text-sm font-semibold xl:py-3 py-2 xl:px-6 px-4 rounded-full flex items-center gap-2;
 
     img {
-        @apply w-6 h-6 bg-secondary rounded-full p-[6px];
+        @apply xl:w-6 w-5 xl:h-6 h-5 bg-secondary rounded-full xl:p-[6px] p-[4px];
     }
 }
 
@@ -59,15 +59,15 @@ a:hover {
     @apply bg-secondary text-primary font-semibold py-3 px-6 rounded-full flex items-center gap-2;
 }
 
-nav {
+nav>div {
     @apply bg-[rgba(255,255,255,0.1)] shadow-[0_4px_17.6px_rgba(0,0,0,0.08)] rounded-[80px];
 
     ul {
-        @apply flex gap-10 justify-end items-center text-secondary;
+        @apply lg:flex hidden 2xl:gap-10 xl:gap-8 gap-6 justify-end items-center text-secondary;
 
         li {
             a {
-                @apply text-dark font-medium rounded-full relative;
+                @apply text-dark xl:text-base text-sm font-medium rounded-full relative;
 
                 &::after {
                     @apply content-[''] absolute left-0 -bottom-1 w-0 h-0.5 bg-primary;

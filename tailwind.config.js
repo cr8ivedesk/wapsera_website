@@ -25,7 +25,7 @@ export default {
             },
             container: {
                 center: true,
-                padding: '1rem',
+                padding: '2rem',
                 screens: {
                     sm: "540px",
                     md: "720px",
@@ -36,11 +36,11 @@ export default {
             },
             screens: {
                 xs: "480px",
-                sm: "640px",
-                md: "768px",
-                lg: "1024px",
-                xl: "1280px",
-                "2xl": "1536px",
+                sm: "540px",
+                md: "720px",
+                lg: "960px",
+                xl: "1140px",
+                "2xl": "1320px",
             },
         },
     },
