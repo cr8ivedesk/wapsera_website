@@ -5,7 +5,7 @@
     @include('front.home._partials.hero-section')
 
     {{-- Key Points --}}
-    {{-- @include('front.home._partials.key-points') --}}
+    @include('front.home._partials.key-points')
 
     {{-- High Lights --}}
     {{-- @include('front.home._partials.high-lights') --}}

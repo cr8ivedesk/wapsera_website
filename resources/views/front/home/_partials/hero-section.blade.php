@@ -17,6 +17,6 @@
     </div>
 
     <div class="flex lg:justify-end justify-center">
-        <img src="/assets/images/home-page/hero-section.png" alt="" class="xl:h-[80vh] h-[70vh] rounded-[4.5rem]" />
+        <img src="/assets/images/home-page/hero-section.png" alt="" class="xl:h-[80vh] sm:h-[70vh] sm:h-[60vh] rounded-b-[4.5rem]" />
     </div>
 </section>
