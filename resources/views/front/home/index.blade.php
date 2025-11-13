@@ -14,7 +14,7 @@
     @include('front.home._partials.pricing-plan')
 
     {{-- Section 6 --}}
-    {{-- @include('front.home._partials.section-6') --}}
+    @include('front.home._partials.section-6')
 
     {{-- Why Choose Us --}}
     {{-- @include('front.home._partials.why-choose-us') --}}
