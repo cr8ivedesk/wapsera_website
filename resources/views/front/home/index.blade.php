@@ -17,5 +17,5 @@
     @include('front.home._partials.section-6')
 
     {{-- Why Choose Us --}}
-    {{-- @include('front.home._partials.why-choose-us') --}}
+    @include('front.home._partials.why-choose-us')
 @endsection

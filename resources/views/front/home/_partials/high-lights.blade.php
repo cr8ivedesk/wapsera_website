@@ -50,7 +50,7 @@
             </p>
 
             <div>
-                <button class="button-primary lg:m-auto m-[0_auto]">
+                <button class="button-primary lg:m-0 m-[0_auto]">
                     <span>Learn More</span>
                     <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
                 </button>
@@ -77,7 +77,7 @@
                 <p class="mb-4 text-sm">{{ $highLight['description'] }}</p>
 
                 <div>
-                    <button class="button-primary lg:m-auto m-[0_auto]">
+                    <button class="button-primary lg:m-0 m-[0_auto]">
                         <span>Learn More</span>
                         <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
                     </button>
