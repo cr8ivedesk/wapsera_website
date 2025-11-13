@@ -36,11 +36,11 @@
     ];
 @endphp
 
-<section class="container my-28">
-    <div class="flex items-center justify-between mb-8">
+<section class="container md:my-28 my-16">
+    <div class="flex lg:flex-row flex-col items-center justify-between gap-4 mb-8 lg:text-start text-center">
         <div>
             <h6 class="text-secondary">Pricing Plan</h6>
-            <h2 class="w-[26rem] text-secondary">Flexible Plans for Every Brand and Creator.</h2>
+            <h2 class="md:w-[26rem] text-secondary">Flexible Plans for Every Brand and Creator.</h2>
         </div>
 
         <div>
@@ -52,14 +52,14 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-3 gap-12">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-12 md:gap-8 gap-8">
         @foreach($plans as $plan)
             <div class="px-6 pb-8 pt-12 shadow-[0_4px_14.3px_4px_rgba(0,0,0,0.06)] bg-white rounded-3xl">
                 <h6 class="font-bold">{{ $plan['title'] }}</h6>
 
                 <h4 class="text-secondary font-extrabold">{{ $plan['heading'] }}</h4>
 
-                <h1 class="text-[3.75rem] text-primary font-extrabold my-2">
+                <h1 class="xl:text-[3.75rem] lg:text-5xl text-[2.5rem] text-primary font-extrabold my-2">
                     <span class="h4">{{ $plan['price'] != "Custom" ? "$" : "" }}</span>{{ $plan['price'] }}
                 </h1>
 

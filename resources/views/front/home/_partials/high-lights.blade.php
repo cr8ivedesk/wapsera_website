@@ -17,7 +17,7 @@
     ]
 @endphp
 <section class="container">
-    <div class="grid lg:grid-cols-2 grid-cols-1 flex-row-reverse gap-12 xl:px-20 md:px-12 px-6 xl:py-24 md:py-16 py-12 bg-[#F9F6FF] rounded-[2rem] mt-28 mb-6 relative">
+    <div class="grid lg:grid-cols-2 grid-cols-1 flex-row-reverse gap-12 xl:px-20 md:px-12 px-6 xl:py-24 md:py-16 py-12 bg-[#F9F6FF] rounded-[2rem] md:mt-28 mt-16 mb-6 relative">
         <img src="/assets/images/home-page/3-rectangle.svg" alt=""
             class="absolute top-[3.75rem] left-14 h-[5.5rem]" />
 
