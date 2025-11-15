@@ -1,3 +1,48 @@
+@php
+    $submenus = [
+        [
+            "title"         => "Facebook",
+            "icon_url"      => "/assets/images/svg-icons/facebook-navbar.svg",
+            "description"   => "Plan and publish posts, Reels, and stories to your pages effortlessly.",
+        ],
+        [
+            "title"         => "Instagram",
+            "icon_url"      => "/assets/images/svg-icons/insta-navbar.svg",
+            "description"   => "Schedule posts, Reels, and carousels to keep your feed active and engaging.",
+        ],
+        [
+            "title"         => "Google Business",
+            "icon_url"      => "/assets/images/svg-icons/google-business.svg",
+            "description"   => "Keep your business visible with scheduled updates and posts.",
+        ],
+        [
+            "title"         => "Linkedin",
+            "icon_url"      => "/assets/images/svg-icons/linkdin-svg.svg",
+            "description"   => "Share updates and articles across your profiles and company pages.",
+        ],
+        [
+            "title"         => "Pinterest",
+            "icon_url"      => "/assets/images/svg-icons/facebook-navbar.svg",
+            "description"   => "Plan and schedule Pins to all your boards with ease.",
+        ],
+        [
+            "title"         => "Tiktok",
+            "icon_url"      => "/assets/images/svg-icons/tiktok-navbar.svg",
+            "description"   => "Schedule videos and Shorts to grow your TikTok presence automatically.",
+        ],
+        [
+            "title"         => "Twitter / X",
+            "icon_url"      => "/assets/images/svg-icons/x-nvabr.svg",
+            "description"   => "Plan tweets, retweets, and quote posts to stay active every day.",
+        ],
+        [
+            "title"         => "Youtube",
+            "icon_url"      => "/assets/images/svg-icons/yuoutube-navbar.svg",
+            "description"   => "Schedule videos and Shorts to all your channels in advance.",
+        ],
+    ];
+@endphp
+
 <nav class="container my-8">
     <div class="flex justify-between items-center xl:py-5 py-6 px-8">
         <a href="{{ route('home-page') }}">
@@ -9,7 +54,7 @@
                 <a href="#" class="active">Home</a>
             </li>
             <li>
-                <a href="#">SocialNetworks</a>
+                <a href="#" data-target="#social-networks">SocialNetworks</a>
             </li>
             <li>
                 <a href="#">Features</a>
@@ -37,3 +82,24 @@
         </a>
     </div>
 </nav>
+
+<div id="social-networks" class="hidden fixed inset-0 z-50">
+    <!-- BACKDROP -->
+    <div class="absolute inset-0" id="social-backdrop"></div>
+
+    <!-- MODAL BOX -->
+    <div class="container mt-[8.5rem] relative z-10">
+        <div class="shadow-[0_4px_9.8px_0_#0000001A] p-8 
+            grid xl:grid-cols-4 grid-cols-3 gap-8 bg-white rounded-[20px]">
+            
+            @foreach ($submenus as $submenu)
+                <div class="space-y-2">
+                    <img src="{{ $submenu['icon_url'] }}" class="h-8" />
+                    <h6 class="font-semibold">{{ $submenu['title'] }}</h6>
+                    <p class="text-sm">{{ $submenu['description'] }}</p>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+</div>

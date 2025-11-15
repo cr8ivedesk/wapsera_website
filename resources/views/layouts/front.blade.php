@@ -14,6 +14,10 @@
     @yield('content')
 
     @include('layouts.front-sections.footer')
+
+    @include('layouts.front-sections.scripts')
+
+    @yield('scripts')
 </body>
 
 </html>
