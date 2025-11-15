@@ -54,10 +54,11 @@
             </p>
 
             <div>
-                <button class="button-primary lg:m-0 m-[0_auto]">
-                    <span>Learn More</span>
-                    <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
-                </button>
+                @include('components.front.button', [
+                    "text" => "<span>Learn More</span>",
+                    "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+                    "class" => "lg:m-0 m-[0_auto]",
+                ])
             </div>
         </div>
     </div>
@@ -81,10 +82,11 @@
                 <p class="mb-4 text-sm">{{ $highLight['description'] }}</p>
 
                 <div>
-                    <button class="button-primary lg:m-0 m-[0_auto]">
-                        <span>Learn More</span>
-                        <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
-                    </button>
+                    @include('components.front.button', [
+                        "text" => "<span>Learn More</span>",
+                        "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+                        "class" => "lg:m-0 m-[0_auto]",
+                    ])
                 </div>
 
                 <div class="w-100 flex justify-center xl:mt-14 mt-10">

@@ -27,10 +27,14 @@
             @endforeach
         </div>
 
-        <button class="button-primary relative !pr-12 justify-start lg:m-0 m-[0_auto]">
-            <span>Discover More</span>
+        @include('components.front.button', [
+            "text" => "<span>Discover More</span>",
+            "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+        ])
+        {{-- <button class="button-primary relative !pr-12 justify-start lg:m-0 m-[0_auto]">
+            <span></span>
             <img src="/assets/images/svg-icons/arrow-up-right.svg" alt=""
                 class="absolute right-2" />
-        </button>
+        </button> --}}
     </div>
 </section>

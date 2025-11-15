@@ -44,11 +44,17 @@
         </div>
 
         <div>
-            <button class="button-primary relative !pr-12 justify-start">
-                <span>Get Started</span>
+            @include('components.front.button', [
+                "text" => "<span>Get Started</span>",
+                "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+                // "class" => "relative !pr-12 justify-start",
+                // "iconClass" => "absolute right-2"
+            ])
+            {{-- <button class="button-primary ">
+                <span></span>
                 <img src="/assets/images/svg-icons/arrow-up-right.svg" alt=""
-                    class="absolute right-2" />
-            </button>
+                    class="" />
+            </button> --}}
         </div>
     </div>
 

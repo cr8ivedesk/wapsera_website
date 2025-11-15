@@ -9,10 +9,10 @@
         <p class="font-medium mb-4">No credit card required.</p>
 
         <div>
-            <button class="button-primary">
-                <h5>Start Free Account</h5>
-                <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
-            </button>
+            @include('components.front.button', [
+                "text" => "<h5>Start Free Account</h5>",
+                "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+            ])
         </div>
     </div>
 

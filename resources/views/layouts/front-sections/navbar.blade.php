@@ -73,10 +73,10 @@
         </ul>
 
         <div class="lg:block hidden">
-            <button class="button-primary">
-                <span>Try it for Free</span>
-                <img src="/assets/images/svg-icons/arrow-up-right.svg" alt="" />
-            </button>
+            @include('components.front.button', [
+                "text" => "<span>Try it for Free</span>",
+                "icon" => "/assets/images/svg-icons/arrow-up-right.svg",
+            ])
         </div>
 
         <a href="#" class="lg:hidden block">
@@ -102,7 +102,6 @@
                     <p class="text-sm">{{ $submenu['description'] }}</p>
                 </div>
             @endforeach
-
         </div>
     </div>
 </div>
