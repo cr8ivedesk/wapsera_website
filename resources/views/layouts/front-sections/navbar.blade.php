@@ -44,9 +44,9 @@
 @endphp
 
 <header class="fixed w-full left-0 right-0 z-50">
-    <nav id="main-nav" class="m-8 shadow-[0_4px_17.6px_rgba(0,0,0,0.08)] rounded-[80px]
-        flex justify-between items-center xl:py-5 py-6 px-8 bg-[#FFFF] transition-all duration-500"
-    >
+    <nav id="main-nav" class="headerbar xl:py-5 py-6 px-8">
+        <div class="absolute top-0 left-0 w-full h-full -z-1 border-t-[1px] border-primary rounded-full"></div>
+
         <a href="{{ route('home-page') }}">
             <img src="/assets/images/logo.svg" alt="{{ env('APP_NAME') }}" class="h-8 w-full" />
         </a>

@@ -50,23 +50,11 @@
 
         const $nav = $("#main-nav");
 
-        $(window).on("scroll", function() {
+        $(window).on("scroll", function () {
             if ($(this).scrollTop() > 10) {
-                // Navbar shrink styles
-                $nav.css({
-                    "justify-content": "center",
-                    "gap": "2rem",
-                    "width": "fit-content",
-                    "margin": "2rem auto"
-                });
+                $nav.addClass("headerbar--scrolled");
             } else {
-                // Navbar original styles
-                $nav.css({
-                    "justify-content": "space-between",
-                    "gap": "0",
-                    "width": "auto",
-                    "margin": "2rem"
-                });
+                $nav.removeClass("headerbar--scrolled");
             }
         });
     });

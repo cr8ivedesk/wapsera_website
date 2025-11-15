@@ -6,6 +6,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/front.css',
+                'resources/css/animation/button.css',
+                'resources/css/animation/header-shrink.css',
                 'resources/js/front/app.js',
                 'resources/css/app.css',
                 'resources/js/app.js'
