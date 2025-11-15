@@ -9,6 +9,8 @@
 </head>
 
 <body class="overflow-x-hidden">
+    @include('layouts.front-sections.mouse-circle-animation')
+
     @include('layouts.front-sections.navbar')
 
     @yield('content')

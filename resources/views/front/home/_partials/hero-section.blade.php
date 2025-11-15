@@ -1,4 +1,4 @@
-<section class="container grid lg:grid-cols-2 grid-cols-1 gap-12">
+<section class="container grid lg:grid-cols-2 grid-cols-1 gap-12 pt-36">
     <div class="flex flex-col justify-center lg:items-start items-center lg:text-start text-center">
         <h1 class="mb-8 text-secondary">
             Schedule Powerful Content, Reach More People and Save Hours Every Week.

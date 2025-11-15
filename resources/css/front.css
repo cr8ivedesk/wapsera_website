@@ -33,7 +33,7 @@
 body {
     font-family: var(--font-sans);
     color: var(--color-dark);
-    background-color: #f2f2f2;
+    background-color: #FFFF;
     scroll-behavior: smooth;
 }
 
@@ -59,12 +59,8 @@ a:hover {
     @apply bg-secondary text-primary font-semibold py-3 px-6 rounded-full flex items-center gap-2;
 }
 
-nav>div {
-    @apply bg-[rgba(255,255,255,0.1)] shadow-[0_4px_17.6px_rgba(0,0,0,0.08)] rounded-[80px];
-
+nav {
     ul {
-        @apply lg:flex hidden 2xl:gap-10 xl:gap-8 gap-6 justify-end items-center text-secondary;
-
         li {
             a {
                 @apply text-dark xl:text-base text-sm font-medium rounded-full relative;

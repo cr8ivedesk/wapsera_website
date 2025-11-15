@@ -43,13 +43,15 @@
     ];
 @endphp
 
-<nav class="container my-8">
-    <div class="flex justify-between items-center xl:py-5 py-6 px-8">
+<header class="fixed w-full left-0 right-0 z-50">
+    <nav id="main-nav" class="m-8 shadow-[0_4px_17.6px_rgba(0,0,0,0.08)] rounded-[80px]
+        flex justify-between items-center xl:py-5 py-6 px-8 bg-[#FFFF] transition-all duration-500"
+    >
         <a href="{{ route('home-page') }}">
             <img src="/assets/images/logo.svg" alt="{{ env('APP_NAME') }}" class="h-8 w-full" />
         </a>
 
-        <ul>
+        <ul class="lg:flex hidden 2xl:gap-10 xl:gap-8 gap-6 justify-end items-center text-secondary">
             <li>
                 <a href="#" class="active">Home</a>
             </li>
@@ -80,8 +82,8 @@
         <a href="#" class="lg:hidden block">
             <img src="/assets/images/menu-hamburger.svg" alt="" class="w-6 h-6" />
         </a>
-    </div>
-</nav>
+    </nav>
+</header>
 
 <div id="social-networks" class="hidden fixed inset-0 z-50">
     <!-- BACKDROP -->
