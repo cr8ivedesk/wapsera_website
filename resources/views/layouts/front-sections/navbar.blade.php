@@ -86,14 +86,15 @@
 </header>
 
 <div id="social-networks" class="hidden fixed inset-0 z-50">
-    <!-- BACKDROP -->
     <div class="absolute inset-0" id="social-backdrop"></div>
 
-    <!-- MODAL BOX -->
     <div class="container mt-[8.5rem] relative z-10">
-        <div class="shadow-[0_4px_9.8px_0_#0000001A] p-8 
-            grid xl:grid-cols-4 grid-cols-3 gap-8 bg-white rounded-[20px]">
-            
+        <div id="social-modal"
+            class="shadow-[0_4px_9.8px_0_#0000001A] p-8 
+            grid xl:grid-cols-4 grid-cols-3 gap-8 bg-white rounded-[20px]
+            translate-y-10 opacity-0 transition-all duration-300 ease-out"
+        >
+
             @foreach ($submenus as $submenu)
                 <div class="space-y-2">
                     <img src="{{ $submenu['icon_url'] }}" class="h-8" />

@@ -2,31 +2,49 @@
 <script>
     $(document).ready(function () {
         const menu = $("#social-networks");
+        const modal = $("#social-modal");
 
-        // OPEN MENU
+        // OPEN MENU (with animation)
         $(document).on("click", "[data-target]", function (e) {
             e.preventDefault();
 
             if (window.innerWidth < 960) return;
 
-            $("body").css({background: "#F2F2F2"});
+            $("body").css({ background: "#F2F2F2" });
 
-            $( $(this).data("target") ).removeClass("hidden");
+            // First show the menu wrapper
+            menu.removeClass("hidden");
+
+            // Trigger animation after a tiny delay (lets CSS apply)
+            setTimeout(() => {
+                modal.removeClass("translate-y-10 opacity-0");
+            }, 10);
         });
 
         // CLOSE WHEN CLICKING BACKDROP
         $(document).on("click", "#social-backdrop", function () {
 
-            $("body").css({background: ""});
+            $("body").css({ background: "" });
 
-            menu.addClass("hidden");
+            // Animate modal down + fade out
+            modal.addClass("translate-y-10 opacity-0");
+
+            // Wait for animation to finish
+            setTimeout(() => {
+                menu.addClass("hidden");
+            }, 300);
         });
 
         // CLOSE WHEN SCREEN < 960px
         $(window).on("resize", function () {
             if (window.innerWidth < 960) {
-                $("body").css({background: ""});
-                menu.addClass("hidden");
+                $("body").css({ background: "" });
+
+                modal.addClass("translate-y-10 opacity-0");
+
+                setTimeout(() => {
+                    menu.addClass("hidden");
+                }, 300);
             }
         });
 

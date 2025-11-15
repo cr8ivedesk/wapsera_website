@@ -26,27 +26,59 @@ let mouse = { x: 0, y: 0 };
 let mainPos = { x: 0, y: 0 };
 let outlinePos = Array.from(outlines).map(() => ({ x: 0, y: 0 }));
 
-// Update mouse position
+let hideTimeout;
+
+// SHOW cursor using Tailwind classes
+function showCursor() {
+    mainCursor.classList.remove("opacity-0", "scale-50");
+    mainCursor.classList.add("opacity-100", "scale-100");
+
+    outlines.forEach(o => {
+        o.classList.remove("opacity-0", "scale-50");
+        o.classList.add("opacity-100", "scale-100");
+    });
+}
+
+// HIDE cursor using Tailwind classes
+function hideCursor() {
+    mainCursor.classList.add("opacity-0", "scale-50");
+    mainCursor.classList.remove("opacity-100", "scale-100");
+
+    outlines.forEach(o => {
+        o.classList.add("opacity-0", "scale-50");
+        o.classList.remove("opacity-100", "scale-100");
+    });
+}
+
+// Mouse movement
 document.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+
+    showCursor();
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => hideCursor(), 2000);
 });
 
+// GSAP follow animation
 gsap.ticker.add(() => {
-    // Smooth main cursor movement
     mainPos.x += (mouse.x - mainPos.x) * 0.2;
     mainPos.y += (mouse.y - mainPos.y) * 0.2;
     gsap.set(mainCursor, { x: mainPos.x, y: mainPos.y });
 
-    // Determine outline color dynamically
     const outlineColor = "#78ae28";
 
-    // Animate outlines
     outlines.forEach((outline, i) => {
         const target = i === 0 ? mainPos : outlinePos[i - 1];
+
         outlinePos[i].x += (target.x - outlinePos[i].x) * 0.15;
         outlinePos[i].y += (target.y - outlinePos[i].y) * 0.15;
 
-        gsap.set(outline, { x: outlinePos[i].x, y: outlinePos[i].y, borderColor: outlineColor });
+        gsap.set(outline, {
+            x: outlinePos[i].x,
+            y: outlinePos[i].y,
+            borderColor: outlineColor,
+        });
     });
 });
