@@ -88,7 +88,7 @@ const FeaturesSection = () => {
             return (
               <div
                 key={index}
-                className="feature-card flex items-center gap-5 xxl:gap-8 bg-card border border-border/60 p-6 lg:p-8 xxl:p-10 rounded-3xl hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
+                className="feature-card flex items-center gap-5 xxl:gap-8 p-6 lg:p-8 xxl:p-10 hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Icon Box */}
                 <div

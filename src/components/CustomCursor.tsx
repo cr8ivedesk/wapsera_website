@@ -34,14 +34,14 @@ const CustomCursor = () => {
 
   const outerVariants = {
     default: {
-      x: mousePosition.x - 20,
-      y: mousePosition.y - 20,
+      x: mousePosition.x - 15,
+      y: mousePosition.y - 15,
       scale: 1,
     },
     hover: {
-      x: mousePosition.x - 20,
-      y: mousePosition.y - 20,
-      scale: 1.8,
+      x: mousePosition.x - 15,
+      y: mousePosition.y - 15,
+      scale: 1.2,
     },
   };
 
@@ -49,7 +49,7 @@ const CustomCursor = () => {
     <>
       {/* Outer Green Circle */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-2 border-[#32CD32] rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 w-7 h-7 border-2 border-[#32CD32] rounded-full pointer-events-none z-[9999]"
         variants={outerVariants}
         animate={cursorVariant}
         transition={{
@@ -60,7 +60,7 @@ const CustomCursor = () => {
         }}
       />
 
-      {/* Inner dot */} <motion.div className="fixed top-0 left-0 w-3 h-3 bg-green-900 rounded-full pointer-events-none z-[9999]" variants={variants} animate={cursorVariant} transition={{ type: 'spring', stiffness: 500, damping: 28, }} />
+      {/* Inner dot */} <motion.div className="fixed top-0 left-0 w-2 h-2 bg-green-900 rounded-full pointer-events-none z-[9999]" variants={variants} animate={cursorVariant} transition={{ type: 'spring', stiffness: 500, damping: 28, }} />
     </>
   );
 };

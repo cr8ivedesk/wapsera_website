@@ -33,12 +33,12 @@ const BottomNav = () => {
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
         <div className="bg-transparent border border-black/10 rounded-full px-6 py-3">
           <div className="flex items-center space-x-2">
-            <a href="#home" className="px-4 py-2 rounded-full text-sm font-medium bg-black text-white">Home</a>
-            <a href="#social-networks" className="px-4 py-2 rounded-full text-sm font-medium text-black hover:bg-black/10">Social</a>
-            <a href="#features" className="px-4 py-2 rounded-full text-sm font-medium text-black hover:bg-black/10">Features</a>
-            <a href="#about" className="px-4 py-2 rounded-full text-sm font-medium text-black hover:bg-black/10">About</a>
-            <a href="#pricing" className="px-4 py-2 rounded-full text-sm font-medium text-black hover:bg-black/10">Pricing</a>
-            <a href="#contact" className="px-4 py-2 rounded-full text-sm font-medium text-black hover:bg-black/10">Contact</a>
+            <a href="#home" className="px-4 py-2 rounded-full text-sm font-medium bg-black/90 text-green-500">Home</a>
+            <a href="#social-networks" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Social</a>
+            <a href="#features" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Features</a>
+            <a href="#about" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">About</a>
+            <a href="#pricing" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Pricing</a>
+            <a href="#contact" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Contact</a>
           </div>
         </div>
       </div>

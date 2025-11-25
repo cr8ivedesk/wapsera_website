@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo/logo.png';
+import w_logo from '../assets/logo/wapsera-final-black.png';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 
@@ -17,20 +18,27 @@ const Header = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-        ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'}
+        ${scrolled ? 'backdrop-blur-md shadow-sm' : 'bg-transparent'}
       `}
     >
-      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-between">
+      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center md:justify-between">
 
-        {/* Logo */}
+        {/* Mobile Logo - Centered w_logo (visible only on small screens) */}
+        <img
+          src={w_logo}
+          alt="Wapsera Logo"
+          className="w-32 md:hidden"
+        />
+
+        {/* Desktop Logo (hidden on small screens) */}
         <img
           src={Logo}
           alt="Logo"
-          className="w-32 md:w-36 lg:w-40"
+          className="hidden md:block md:w-36 lg:w-40"
         />
 
-        {/* CTA Button */}
-        <Button className="btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+        {/* CTA Button (hidden on small screens) */}
+        <Button className="hidden md:flex btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
           <span className="btn-jump-text flex items-center gap-3">
             Try it for free
             <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">

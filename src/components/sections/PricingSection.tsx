@@ -125,7 +125,7 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-10 shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-10 drop-shadow-md transition-all duration-300 hover:-translate-y-2"
             >
               {/* Plan Header */}
               <div className="mb-6 lg:mb-8">

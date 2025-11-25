@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { FaTiktok } from 'react-icons/fa';
-import logo from '@/assets/white-logo.png';
+import logo from '@/assets/logo/white-logo.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
