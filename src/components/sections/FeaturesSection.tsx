@@ -81,7 +81,7 @@ const FeaturesSection = () => {
 
         {/* Feature Cards */}
         <div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xxl:gap-12"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 2xl:gap-8 xxl:gap-12"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
