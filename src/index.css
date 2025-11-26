@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #080808;
+
+  --card: #FFFFFF;
+  --card-foreground: #080808;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #080808;
+
+  --primary: #B0FC42;
+  --primary-foreground: #080808;
+
+  --dark-bg: #0F140F;
+  --dark-foreground: #FAFAFA;
+
+  --secondary: #F4F4F7;
+  --secondary-foreground: #080808;
+
+  --muted: #F4F4F7;
+  --muted-foreground: #737373;
+
+  --accent: #B4FF00;
+  --accent-foreground: #080808;
+
+  --destructive: #FF6666;
+  --destructive-foreground: #FAFAFA;
+
+  --border: #E5E5EC;
+  --input: #E5E5EC;
+  --ring: #B4FF00;
+
+  --radius: 1rem;
+
+  --lime: #B4FF00;
+  --lime-foreground: #080808;
+  --orange: #FF5E00;
+  --teal: #47E8CB;
+
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-lime: 0 8px 32px rgba(173,255,47,0.2);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor: none;
+  }
+
+  @font-face {
+  font-family: 'PlusJatkaraSans';
+  src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+  @font-face {
+  font-family: 'PlusJatkaraSans';
+  src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+  font-weight: 400;
+}
+
+  body {
+  @apply bg-background text-foreground;
+  font-family: 'PlusJatkaraSans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+  
+  /* Smooth scrolling */
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  /* Text reveal animation */
+  .text-reveal {
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .text-reveal-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  
+  /* Button with jumping text */
+  .btn-jump {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-jump-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .btn-jump:hover .btn-jump-text {
+    transform: translateY(-120%);
+  }
+  
+  .btn-jump-duplicate {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .btn-jump:hover .btn-jump-duplicate {
+    transform: translateY(0);
+  }
+}
