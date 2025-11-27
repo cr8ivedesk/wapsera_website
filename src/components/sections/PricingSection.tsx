@@ -25,26 +25,70 @@ const PricingSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 60%',
+          once: true,
         },
       }
     );
 
-    // Animate pricing cards
+    // Animate pricing cards with directional animations
     const cards = cardsRef.current?.querySelectorAll('.pricing-card');
 
     if (cards) {
+      // Set initial state for all cards to prevent flash
+      gsap.set(cards, { opacity: 0 });
+
+      // Left card - slide from left
       gsap.fromTo(
-        cards,
-        { opacity: 0, y: 40 },
+        cards[0],
+        { opacity: 0, x: -80, y: 0 },
         {
           opacity: 1,
+          x: 0,
           y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
+          duration: 1.2,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: cardsRef.current,
-            start: 'top 70%',
+            start: 'top 75%',
+            once: true,
+          },
+        }
+      );
+
+      // Center card - slide from bottom
+      gsap.fromTo(
+        cards[1],
+        { opacity: 0, x: 0, y: 80 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          delay: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: 'top 75%',
+            once: true,
+          },
+        }
+      );
+
+      // Right card - slide from right
+      gsap.fromTo(
+        cards[2],
+        { opacity: 0, x: 80, y: 0 },
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          delay: 0.3,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: 'top 75%',
+            once: true,
           },
         }
       );
@@ -134,7 +178,7 @@ const PricingSection = () => {
 
                 {/* Price */}
                 <div className="mb-6">
-                  <span className='text-5xl lg:text-5xl font-bold text-primary'>
+                  <span className='text-5xl lg:text-5xl font-bold text-[#9CE335]'>
                     {plan.price}
                   </span>
                 </div>
