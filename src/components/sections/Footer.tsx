@@ -1,5 +1,5 @@
 import { Facebook, Instagram } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import { FaTiktok } from 'react-icons/fa';
@@ -9,6 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const footerRef = useRef<HTMLElement>(null);
+  const wapseraTextRef = useRef<HTMLHeadingElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     // Animate footer sections
@@ -32,6 +35,19 @@ const Footer = () => {
       );
     }
   }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {
+    if (!wapseraTextRef.current) return;
+
+    const rect = wapseraTextRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setMousePosition({ x, y });
+  };
+
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => setIsHovering(false);
 
   const footerLinks = {
     company: [
@@ -71,7 +87,7 @@ const Footer = () => {
   };
 
   return (
-    <footer ref={footerRef} className="bg-dark-bg text-dark-foreground py-16 lg:py-20">
+    <footer ref={footerRef} className="bg-[#000000] text-white py-16 lg:py-20">
       <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
@@ -187,6 +203,79 @@ const Footer = () => {
           <p className="text-sm lg:text-base text-gray-500">
             © 2025 Wapsera.com. All Rights Reserved.
           </p>
+        </div>
+
+        {/* Large WAPSERA Text with Cursor-Following Gradient */}
+        <div className="mt-12 lg:mt-16 overflow-hidden w-full">
+          <style>{`
+            .wapsera-text {
+              font-size: clamp(6rem, 20vw, 20rem);
+              font-weight: 900;
+              line-height: 0.9;
+              letter-spacing: -0.04em;
+              text-align: center;
+              cursor: pointer;
+              display: block;
+              width: 100%;
+              user-select: none;
+              position: relative;
+              padding: 0 1rem;
+              transition: all 0.3s ease;
+              background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+            }
+
+            .wapsera-text.hovering {
+              background: radial-gradient(
+                circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                #9CE335 0%,
+                #7BC428 15%,
+                #5AA51D 25%,
+                #4a4a4a 40%,
+                #2a2a2a 60%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              filter: drop-shadow(0 0 20px rgba(156, 227, 53, 0.2));
+            }
+
+            @media (max-width: 1024px) {
+              .wapsera-text {
+                font-size: clamp(5rem, 18vw, 15rem);
+              }
+            }
+
+            @media (max-width: 768px) {
+              .wapsera-text {
+                font-size: clamp(4rem, 16vw, 10rem);
+                letter-spacing: -0.02em;
+              }
+            }
+
+            @media (max-width: 480px) {
+              .wapsera-text {
+                font-size: clamp(3rem, 14vw, 8rem);
+              }
+            }
+          `}</style>
+          <div className="w-full">
+            <h2
+              ref={wapseraTextRef}
+              className={`wapsera-text ${isHovering ? 'hovering' : ''}`}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                '--mouse-x': `${mousePosition.x}%`,
+                '--mouse-y': `${mousePosition.y}%`,
+              } as React.CSSProperties}
+            >
+              WAPSERA
+            </h2>
+          </div>
         </div>
       </div>
     </footer>
