@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -87,17 +87,17 @@ const Footer = () => {
   };
 
   return (
-    <footer ref={footerRef} className="bg-[#000000] text-white py-16 lg:py-20">
+    <footer ref={footerRef} className="bg-[#000000] text-white py-16 lg:py-20 rounded-t-[30px]">
       <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
 
           {/* Logo and Social */}
-          <div className="footer-section col-span-2 md:col-span-3 lg:col-span-1">
-            <div className="mb-6 lg:mb-8">
+          <div className="footer-section col-span-1 md:col-span-2 lg:col-span-1 text-center lg:text-left">
+            <div className="mb-6 lg:mb-8 flex justify-center lg:justify-start">
               <img src={logo} alt="Wapsera Logo" className="h-auto w-auto" />
             </div>
-            <div className="flex gap-3 lg:gap-4">
+            <div className="flex gap-3 lg:gap-4 justify-center lg:justify-start">
               <a
                 href="#"
                 className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
@@ -117,20 +117,13 @@ const Footer = () => {
                 className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
+                <Twitter className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
               </a>
-              {/* <a
-                href="#"
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
-                aria-label="TikTok"
-              >
-                <FaTiktok className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
-              </a> */}
             </div>
           </div>
 
           {/* Company Links */}
-          <div className="footer-section">
+          <div className="footer-section text-center lg:text-left">
             <h3 className="font-bold text-xl lg:text-2xl mb-4 lg:mb-6 text-white">Company</h3>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.company.map((link, index) => (
@@ -147,7 +140,7 @@ const Footer = () => {
           </div>
 
           {/* Product Links */}
-          <div className="footer-section">
+          <div className="footer-section text-center lg:text-left">
             <h3 className="font-bold text-xl lg:text-2xl mb-4 lg:mb-6 text-white">Product</h3>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.product.map((link, index) => (
@@ -164,7 +157,7 @@ const Footer = () => {
           </div>
 
           {/* Support Links */}
-          <div className="footer-section">
+          <div className="footer-section text-center lg:text-left">
             <h3 className="font-bold text-xl lg:text-2xl mb-4 lg:mb-6 text-white">Support</h3>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.support.map((link, index) => (
@@ -181,7 +174,7 @@ const Footer = () => {
           </div>
 
           {/* Features Links */}
-          <div className="footer-section">
+          <div className="footer-section text-center lg:text-left">
             <h3 className="font-bold text-xl lg:text-2xl mb-4 lg:mb-6 text-white">Features</h3>
             <ul className="space-y-2 lg:space-y-3">
               {footerLinks.features.map((link, index) => (
@@ -206,10 +199,10 @@ const Footer = () => {
         </div>
 
         {/* Large WAPSERA Text with Cursor-Following Gradient */}
-        <div className="mt-12 lg:mt-16 overflow-hidden w-full">
+        <div className="mt-12 lg:mt-16 w-full mb-12">
           <style>{`
             .wapsera-text {
-              font-size: clamp(6rem, 20vw, 20rem);
+              font-size: clamp(5rem, 18vw, 16rem);
               font-weight: 900;
               line-height: 0.9;
               letter-spacing: -0.04em;
@@ -219,7 +212,7 @@ const Footer = () => {
               width: 100%;
               user-select: none;
               position: relative;
-              padding: 0 1rem;
+              padding: 0 0.5rem;
               transition: all 0.3s ease;
               background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
               -webkit-background-clip: text;
@@ -244,20 +237,21 @@ const Footer = () => {
 
             @media (max-width: 1024px) {
               .wapsera-text {
-                font-size: clamp(5rem, 18vw, 15rem);
+                font-size: clamp(4.5rem, 16vw, 13rem);
               }
             }
 
             @media (max-width: 768px) {
               .wapsera-text {
-                font-size: clamp(4rem, 16vw, 10rem);
+                font-size: clamp(3.5rem, 14vw, 9rem);
                 letter-spacing: -0.02em;
               }
             }
 
             @media (max-width: 480px) {
               .wapsera-text {
-                font-size: clamp(3rem, 14vw, 8rem);
+                font-size: clamp(2.5rem, 12vw, 7rem);
+                padding: 0 0.25rem;
               }
             }
           `}</style>

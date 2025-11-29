@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedHeading from '../ui/AnimatedHeading';
 import ctaMan from '@/assets/CTA_Section_Images/cta-man.png';
+import EllipseCircle from '@/assets/CTA_Section_Images/Ellipse-Circle.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +35,15 @@ const CTASection = () => {
     <>
       {/* Dark CTA Section */}
       <section className="lg:py-24 py-8 bg-dark-bg text-dark-foreground rounded-[50px]">
-        <div ref={sectionRef} className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6">
+
+        <div ref={sectionRef} className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 relative z-10">
+          {/* Decorative Ellipse Circle - Top Left for Green Glow */}
+          <img
+            src={EllipseCircle}
+            alt=""
+            className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 opacity-70 pointer-events-none -translate-x-1/4 -translate-y-1/4"
+            style={{ filter: 'blur(20px)' }}
+          />
           <div className="grid lg:grid-cols-2 gap-x-16 items-center bg-dark-bg rounded-3xl overflow-hidden">
             {/* Left - Content */}
             <div className="space-y-8 p-8">
