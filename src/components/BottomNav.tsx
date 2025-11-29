@@ -55,7 +55,7 @@ const BottomNav = () => {
         className={`fixed left-0 right-0 z-[40] md:hidden bg-white rounded-t-3xl shadow-2xl transition-all duration-500 ease-out ${isMenuOpen ? 'bottom-[72px]' : 'bottom-0 translate-y-full'
           }`}
       >
-        <div className="px-6 pt-6 pb-8 max-h-[70vh] overflow-y-auto">
+        <div className="px-6 pt-6 pb-8 max-h-[70vh] overflow-y-auto mb-12">
           {/* Close Button */}
           <button
             onClick={() => setIsMenuOpen(false)}
