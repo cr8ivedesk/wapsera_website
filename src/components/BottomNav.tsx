@@ -1,13 +1,57 @@
 import { useState } from 'react';
-import { Home, Users, Grid3x3, Briefcase, DollarSign, MessageCircle, X } from 'lucide-react';
+import { Home, Users, Grid3x3, Briefcase, DollarSign, MessageCircle, X, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const BottomNav = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSocialPanelOpen, setIsSocialPanelOpen] = useState(false);
+
+  const socialPlatforms = [
+    {
+      name: 'Facebook',
+      icon: Facebook,
+      description: 'Plan and publish posts, Reels, and stories to your pages effortlessly.',
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      description: 'Schedule posts, Reels, and carousels to keep your feed active and engaging.',
+    },
+    {
+      name: 'Google Business',
+      icon: Briefcase,
+      description: 'Keep your business visible with scheduled updates and posts.',
+    },
+    {
+      name: 'Google Business',
+      icon: Briefcase,
+      description: 'Share updates and articles across your profiles and company pages.',
+    },
+    {
+      name: 'Pinterest',
+      icon: Grid3x3,
+      description: 'Plan and publish Pins to all your boards with ease.',
+    },
+    {
+      name: 'TikTok',
+      icon: Users,
+      description: 'Schedule videos and Shorts to grow your TikTok presence automatically.',
+    },
+    {
+      name: 'Twitter / X',
+      icon: X,
+      description: 'Plan tweets, retweets, and quote posts to stay active every day.',
+    },
+    {
+      name: 'Youtube',
+      icon: Youtube,
+      description: 'Schedule videos and Shorts to all your channels in advance.',
+    },
+  ];
 
   const navItems = [
     { label: 'Features', icon: Grid3x3, href: '#products' },
-    { label: 'Services', icon: Home, href: '#services' },
+    { label: 'Social', icon: Home, href: '#social-networks', onClick: () => setIsSocialPanelOpen(true) },
     { label: 'Contact Us', icon: MessageCircle, href: '#chat', isCenter: true },
     { label: 'Pricing', icon: DollarSign, href: '#pricing' },
     { label: 'More', icon: Users, href: '#more', onClick: () => setIsMenuOpen(true) },
@@ -29,16 +73,87 @@ const BottomNav = () => {
 
   return (
     <>
-      {/* Desktop Navigation - Hidden on mobile */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
+      {/* Desktop Navigation - Hidden on mobile, stays visible above social panel */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden md:block">
         <div className="bg-transparent border border-black/10 rounded-full px-6 py-3">
           <div className="flex items-center space-x-2">
             <a href="#home" className="px-4 py-2 rounded-full text-sm font-medium bg-black/90 text-green-500">Home</a>
-            <a href="#social-networks" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Social</a>
+            <div
+              className="relative"
+              onMouseEnter={() => setIsSocialPanelOpen(true)}
+              onMouseLeave={() => setIsSocialPanelOpen(false)}
+            >
+              <button className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">
+                Social
+              </button>
+            </div>
             <a href="#features" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Features</a>
             <a href="#about" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">About</a>
             <a href="#pricing" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Pricing</a>
             <a href="#contact" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Social Platforms Slide-Up Panel - Backdrop */}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[35] md:z-[60] transition-opacity duration-300 ${isSocialPanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        onClick={() => setIsSocialPanelOpen(false)}
+      />
+
+      {/* Social Platforms Slide-Up Panel */}
+      <div
+        onMouseEnter={() => setIsSocialPanelOpen(true)}
+        onMouseLeave={() => setIsSocialPanelOpen(false)}
+        className={`fixed left-0 right-0 md:left-5 md:right-5 z-[40] md:z-[70] bg-white rounded-t-3xl md:rounded-3xl shadow-2xl transition-all duration-500 ease-out ${isSocialPanelOpen ? 'bottom-[72px] md:bottom-24' : 'bottom-0 translate-y-full'
+          }`}
+      >
+        <div className="px-6 md:px-0 pt-6 pb-8 max-h-[70vh] overflow-y-auto mb-12 md:mb-0">
+          {/* Close Button - Mobile only */}
+          <button
+            onClick={() => setIsSocialPanelOpen(false)}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors z-10 md:hidden"
+          >
+            <X className="w-5 h-5 text-gray-600" />
+          </button>
+
+          {/* Header */}
+          <div className="mb-4 md:max-w-7xl md:mx-auto md:px-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Social Networks</h2>
+            <p className="text-sm text-gray-600 mt-1">Choose your platform to get started</p>
+          </div>
+
+          {/* Social Platforms - List on mobile, compact grid on desktop */}
+          <div className="space-y-1 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-3 mt-6 md:max-w-7xl md:mx-auto md:px-8">
+            {socialPlatforms.map((platform, index) => {
+              const Icon = platform.icon;
+              return (
+                <a
+                  key={index}
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsSocialPanelOpen(false);
+                  }}
+                  className="block py-3 md:py-4 border-b border-gray-100 last:border-0 md:border-0 hover:bg-gray-50 md:hover:bg-green-50 -mx-6 px-6 md:mx-0 md:px-4 md:rounded-lg transition-colors group"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gray-100 group-hover:bg-green-100 flex items-center justify-center flex-shrink-0 transition-colors">
+                      <Icon className="w-5 h-5 md:w-6 md:h-6 text-gray-700 group-hover:text-green-600 transition-colors" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-sm md:text-base font-bold text-gray-900 mb-0.5">
+                        {platform.name}
+                      </h3>
+                      <p className="text-xs md:text-sm text-gray-600 leading-snug">
+                        {platform.description}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
