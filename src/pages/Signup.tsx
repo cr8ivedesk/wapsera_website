@@ -10,7 +10,7 @@ import rightAsset from '@/assets/login_Images/right-Asset.png';
 import loveIcon from '@/assets/login_Images/love-icon.png';
 import thumbIcon from '@/assets/login_Images/thumb-icon.png';
 
-const Login = () => {
+const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -233,4 +233,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
