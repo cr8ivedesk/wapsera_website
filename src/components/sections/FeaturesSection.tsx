@@ -15,8 +15,8 @@ const FeaturesSection = () => {
 
       gsap.fromTo(
         cards,
-        { 
-          opacity: 0, 
+        {
+          opacity: 0,
           y: 50,
           scale: 0.95 // Added slight scale for a "pop" effect
         },
@@ -64,11 +64,11 @@ const FeaturesSection = () => {
       ref={sectionRef}
       className="pb-16 sm:py-16 lg:py-24 xxl:py-32 bg-background"
     >
-      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px]">
+      <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px]">
 
         {/* Section Heading */}
         <div className="text-center mb-16 xxl:mb-18 space-y-6">
-          <AnimatedHeading 
+          <AnimatedHeading
             tag="h2"
             text="More time for essentials via social media automation"
             className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl xxl:text-6xl font-[1200] leading-[1.15] tracking-tight max-w-4xl xxl:max-w-6xl mx-auto"

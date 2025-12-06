@@ -51,10 +51,9 @@ const Index = () => {
       <BottomNav />
       <BackToTop />
 
-      {/* Bottom fade/blur effect for scrolling content */}
-      {/* <div className="fixed bottom-0 left-0 right-0 h-28 pointer-events-none z-40 bg-gradient-to-t from-background via-background/60 to-transparent backdrop-blur-[1px]" /> */}
-
-      <div className="fixed bottom-0 left-0 right-0 h-32 pointer-events-none z-40 bg-gradient-to-t from-transparent to-transparent backdrop-blur-[4px]" />
+      <div
+        className="fixed bottom-0 left-0 right-0 h-36 pointer-events-none z-40 backdrop-blur-[40px] [mask-image:linear-gradient(to_bottom,transparent,black)]"
+      />
     </div>
   );
 };

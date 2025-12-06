@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -36,7 +36,7 @@ const CTASection = () => {
       {/* Dark CTA Section */}
       <section className="lg:py-24 py-8 bg-dark-bg text-dark-foreground rounded-[50px]">
 
-        <div ref={sectionRef} className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 relative z-10">
+        <div ref={sectionRef} className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 relative z-10">
           {/* Decorative Ellipse Circle - Top Left for Green Glow */}
           <img
             src={EllipseCircle}
@@ -92,17 +92,11 @@ const CTASection = () => {
                 </div>
               </div>
 
-              <Button className="animate-item btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg rounded-full">
-                <span className="btn-jump-text flex items-center gap-3">
+              <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+                <span className="flex items-center gap-3">
                   Discover More
-                  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5 text-white" />
-                  </span>
-                </span>
-                <span className="btn-jump-duplicate flex items-center gap-3">
-                  Discover More
-                  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5 text-white" />
+                  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </span>
               </Button>

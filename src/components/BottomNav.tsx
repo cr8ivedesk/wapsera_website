@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Home, Users, Grid3x3, Briefcase, DollarSign, MessageCircle, X, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Home, Users, Grid3x3, Briefcase, DollarSign, MessageCircle, X, Facebook, Instagram, Youtube, ArrowUpRight } from 'lucide-react';
+import { Button } from './ui/button';
 
 const BottomNav = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -75,22 +76,48 @@ const BottomNav = () => {
     <>
       {/* Desktop Navigation - Hidden on mobile, stays visible above social panel */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden md:block">
-        <div className="bg-transparent border border-black/10 rounded-full px-6 py-3">
+        <div className="bg-white/30 backdrop-blur-[40px] border border-black/10 rounded-full px-6 py-3">
           <div className="flex items-center space-x-2">
-            <a href="#home" className="px-4 py-2 rounded-full text-sm font-medium bg-black/90 text-green-500">Home</a>
+            <a href="#home" className="group relative px-4 py-2 text-sm font-normal text-black transition-colors">
+              Home
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full"></span>
+            </a>
             <div
               className="relative"
               onMouseEnter={() => setIsSocialPanelOpen(true)}
               onMouseLeave={() => setIsSocialPanelOpen(false)}
             >
-              <button className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">
+              <button className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
                 Social
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full transition-opacity ${isSocialPanelOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}></span>
               </button>
+              {/* Invisible bridge to prevent dropdown from closing when moving mouse to panel */}
+              <div className="absolute left-1/2 -translate-x-1/2 w-32 h-16 top-full"></div>
             </div>
-            <a href="#features" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Features</a>
-            <a href="#about" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">About</a>
-            <a href="#pricing" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Pricing</a>
-            <a href="#contact" className="px-4 py-2 rounded-full text-sm font-medium text-green-500 hover:bg-black/10">Contact</a>
+            <a href="#features" className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
+              Features
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </a>
+            <a href="#about" className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
+              About
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </a>
+            <a href="#pricing" className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
+              Pricing
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </a>
+            <a href="#contact" className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
+              Contact
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </a>
+            <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+              <span className="flex items-center gap-3">
+                Try it for free
+                <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                  <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </span>
+            </Button>
           </div>
         </div>
       </div>
@@ -109,6 +136,10 @@ const BottomNav = () => {
         className={`fixed left-0 right-0 md:left-5 md:right-5 z-[40] md:z-[70] bg-white rounded-t-3xl md:rounded-3xl shadow-2xl transition-all duration-500 ease-out ${isSocialPanelOpen ? 'bottom-[72px] md:bottom-24' : 'bottom-0 translate-y-full'
           }`}
       >
+        {/* Arrow pointing down to the Social nav link - only on desktop */}
+        <div className="hidden md:block absolute -bottom-3 left-1/2 -translate-x-1/2" style={{ marginLeft: '-140px' }}>
+          <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-white drop-shadow-md"></div>
+        </div>
         <div className="px-6 md:px-0 pt-6 pb-8 max-h-[70vh] overflow-y-auto mb-12 md:mb-0">
           {/* Close Button - Mobile only */}
           <button

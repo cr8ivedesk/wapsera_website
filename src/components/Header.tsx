@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Logo from '../assets/logo/logo.png';
 import w_logo from '../assets/logo/wapsera-final-black.png';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
@@ -18,10 +18,10 @@ const Header = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-        ${scrolled ? 'backdrop-blur-md shadow-sm' : 'bg-transparent'}
+        ${scrolled ? 'bg-white/30 backdrop-blur-[40px]' : 'bg-transparent'}
       `}
     >
-      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center md:justify-between">
+      <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center">
 
         {/* Mobile Logo - Centered w_logo (visible only on small screens) */}
         <img
@@ -38,20 +38,14 @@ const Header = () => {
         />
 
         {/* CTA Button (hidden on small screens) */}
-        <Button className="hidden md:flex btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
-          <span className="btn-jump-text flex items-center gap-3">
+        {/* <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+          <span className="flex items-center gap-3">
             Try it for free
-            <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-              <ArrowRight className="w-5 h-5 text-white" />
+            <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+              <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </span>
-          <span className="btn-jump-duplicate flex items-center gap-3">
-            Try it for free
-            <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-              <ArrowRight className="w-5 h-5 text-white" />
-            </span>
-          </span>
-        </Button>
+        </Button> */}
       </div>
     </nav>
   );

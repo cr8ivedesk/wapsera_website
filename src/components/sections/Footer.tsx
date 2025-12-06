@@ -88,7 +88,7 @@ const Footer = () => {
 
   return (
     <footer ref={footerRef} className="bg-[#000000] text-white py-16 lg:py-20 rounded-t-[30px]">
-      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
+      <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
 

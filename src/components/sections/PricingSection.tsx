@@ -1,4 +1,4 @@
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -135,7 +135,7 @@ const PricingSection = () => {
   return (
     <section ref={sectionRef} className="relative py-12 lg:py-16 xxl:py-24 overflow-hidden bg-background">
       {/* Container for side margins */}
-      <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
+      <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Header Section */}
         <div ref={headerRef} className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12 lg:mb-16 gap-6">
           <div className="space-y-3 lg:space-y-4">
@@ -148,18 +148,12 @@ const PricingSection = () => {
           </div>
 
           {/* Get Started Button */}
-          <Button className="btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg rounded-full self-start lg:self-auto flex-shrink-0">
-            <span className="btn-jump-text flex items-center gap-3">
+          <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+            <span className="flex items-center gap-3">
               Get Started
-              <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                <ArrowRight className="w-5 h-5 text-white" />
-              </span>
-            </span>
-            <span className="btn-jump-duplicate flex items-center gap-3">
-              Get Started
-              <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                <ArrowRight className="w-5 h-5 text-white" />
-              </span>
+              <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
             </span>
           </Button>
         </div>

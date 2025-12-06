@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -57,7 +57,7 @@ const WhyChooseUsSection = () => {
     return (
         <section ref={sectionRef} className="relative py-16 lg:py-20 overflow-hidden bg-background">
             {/* Container for side margins */}
-            <div className="container xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
+            <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xxl:gap-20 items-center">
 
                     {/* Left - Image */}
@@ -101,18 +101,12 @@ const WhyChooseUsSection = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <Button className="btn-jump bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg rounded-full mt-2">
-                            <span className="btn-jump-text flex items-center gap-3">
+                        <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+                            <span className="flex items-center gap-3">
                                 Discover More
-                                <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                                    <ArrowRight className="w-5 h-5 text-white" />
-                                </span>
-                            </span>
-                            <span className="btn-jump-duplicate flex items-center gap-3">
-                                Discover More
-                                <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full -rotate-45 transition-all duration-300">
-                                    <ArrowRight className="w-5 h-5 text-white" />
-                                </span>
+                                <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
                             </span>
                         </Button>
                     </div>
