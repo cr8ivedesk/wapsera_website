@@ -91,8 +91,8 @@ const BottomNav = () => {
                 Social
                 <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full transition-opacity ${isSocialPanelOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}></span>
               </button>
-              {/* Invisible bridge to prevent dropdown from closing when moving mouse to panel */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-32 h-16 top-full"></div>
+              {/* Invisible bridge to prevent dropdown from closing when moving mouse to panel - narrow width only */}
+              <div className="absolute left-1/2 -translate-x-1/2 w-20 h-20 top-full"></div>
             </div>
             <a href="#features" className="group relative px-4 py-2 text-sm font-medium font-normal text-black transition-colors">
               Features
@@ -137,7 +137,7 @@ const BottomNav = () => {
           }`}
       >
         {/* Arrow pointing down to the Social nav link - only on desktop */}
-        <div className="hidden md:block absolute -bottom-3 left-1/2 -translate-x-1/2" style={{ marginLeft: '-140px' }}>
+        <div className="hidden md:block absolute -bottom-3 left-1/2 -translate-x-1/2" style={{ marginLeft: '-230px' }}>
           <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[12px] border-l-transparent border-r-transparent border-t-white drop-shadow-md"></div>
         </div>
         <div className="px-6 md:px-0 pt-6 pb-8 max-h-[70vh] overflow-y-auto mb-12 md:mb-0">
@@ -151,12 +151,12 @@ const BottomNav = () => {
 
           {/* Header */}
           <div className="mb-4 md:max-w-7xl md:mx-auto md:px-8">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Social Networks</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-black">Social Networks</h2>
             <p className="text-sm text-gray-600 mt-1">Choose your platform to get started</p>
           </div>
 
           {/* Social Platforms - List on mobile, compact grid on desktop */}
-          <div className="space-y-1 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-3 mt-6 md:max-w-7xl md:mx-auto md:px-8">
+          <div className="space-y-1 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-3 mt-6 md:max-w-7xl md:mx-auto md:px-16">
             {socialPlatforms.map((platform, index) => {
               const Icon = platform.icon;
               return (
