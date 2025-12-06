@@ -37,7 +37,7 @@ const HeroSection = () => {
             <AnimatedHeading
               tag="h1"
               text="Schedule Powerful Content, Reach More People and Save Hours Every Week."
-              className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl xxl:text-[5rem] font-[1200] leading-[1.1] tracking-tighter text-foreground"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl xxl:text-[5rem] font-[1200] leading-[1.1] tracking-tighter text-foreground font-extrabold"
             />
 
             <div ref={ctaRef} className="space-y-4 lg:space-y-4 xxl:space-y-8 opacity-0">

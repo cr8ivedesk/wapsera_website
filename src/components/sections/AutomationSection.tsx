@@ -88,29 +88,29 @@ const AutomationSection = () => {
   }, []);
 
   return (
-    <section className="relative py-16 lg:py-20 overflow-hidden">
+    <section className="relative py-12 lg:py-12 xl:py-16 overflow-hidden">
       {/* Container for side margins */}
       <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
 
           {/* Left Card - Social Media Automation */}
-          <div ref={section1Ref} className="relative bg-[#FFF8F0] rounded-3xl lg:rounded-[2.5rem] py-12 lg:py-16 px-8 lg:px-12">
+          <div ref={section1Ref} className="relative bg-[#FFF8F0] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10">
             {/* Content - Positioned at Top */}
-            <div ref={content1Ref} className="space-y-5 lg:space-y-6 mb-10 lg:mb-12">
+            <div ref={content1Ref} className="space-y-5 lg:space-y-6 mb-10 lg:mb-8 xl:mb-8">
               {/* Tag */}
-              <div className="inline-block bg-foreground px-5 py-2 rounded-full font-semibold text-green-500">
-                Social media automation
+              <div className="inline-block bg-black px-5 py-2 rounded-full font-semibold text-primary">
+                Social media management
               </div>
 
               {/* Heading with Animation */}
               <AnimatedHeading
                 tag="h2"
                 text="Save time, stay consistent, and boost results with automated social media management."
-                className="text-2xl md:text-3xl lg:text-3xl xxl:text-4xl font-bold leading-tight text-foreground"
+                className="text-2xl md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl xxl:text-4xl font-bold leading-tight text-black"
               />
 
               {/* Description */}
-              <p className="text-base lg:text-base text-foreground/80 leading-relaxed">
+              <p className="text-base lg:text-base text-black leading-relaxed">
                 Save time and reduce the stress of managing multiple platforms. Stay consistent with your posts and maintain a strong online presence. Automate your social media workflow with WapSera and focus on growing your brand.
               </p>
 
@@ -128,17 +128,17 @@ const AutomationSection = () => {
             {/* Image with Vectors - Positioned Below Content */}
             <div ref={image1Ref} className="relative">
               {/* Main Image with Teal Background */}
-              <div className="relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden pt-8 lg:pt-10 flex justify-center">
+              <div className="relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden pt-8 lg:pt-10 xl:px-10 flex justify-center">
                 <img
                   src={socialMediaAutomation}
                   alt="Social media automation mockup"
-                  className=""
+                  className="w-full h-full object-contain"
                 />
               </div>
 
               {/* Decorative Vectors */}
               {/* Vector 1: Top-left with gap */}
-              <div className="absolute -top-6 -left-2 lg:-top-2 lg:-left-2 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute -top-6 -left-2 lg:-top-2 lg:-left-2 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector1}
                   alt=""
@@ -147,7 +147,7 @@ const AutomationSection = () => {
               </div>
 
               {/* Vector 2: Left-center */}
-              <div className="absolute top-1/2 -translate-y-1/2 -left-8 lg:-left-4 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute top-1/2 -translate-y-1/2 -left-8 lg:-left-4 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector2}
                   alt=""
@@ -165,7 +165,7 @@ const AutomationSection = () => {
               </div>
 
               {/* Vector 4: Bottom-right with gap */}
-              <div className="absolute -bottom-6 -right-6 lg:-bottom-2 lg:-right-6 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute -bottom-6 -right-6 lg:-bottom-2 lg:-right-6 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector4}
                   alt=""
@@ -176,23 +176,23 @@ const AutomationSection = () => {
           </div>
 
           {/* Right Card - Content Planning */}
-          <div ref={section2Ref} className="relative bg-[#F0FFF4] rounded-3xl lg:rounded-[2.5rem] py-12 lg:py-16 px-8 lg:px-12">
+          <div ref={section2Ref} className="relative bg-[#F0FFF4] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10">
             {/* Content - Positioned at Top */}
             <div ref={content2Ref} className="space-y-5 lg:space-y-6 mb-10 lg:mb-12">
               {/* Tag */}
-              <div className="inline-block bg-foreground px-5 py-2 rounded-full font-semibold text-green-500">
-                Content planning
+              <div className="inline-block bg-black px-5 py-2 rounded-full font-semibold text-primary">
+                Content Planning
               </div>
 
               {/* Heading with Animation */}
               <AnimatedHeading
                 tag="h2"
                 text="Manage all your platforms efficiently and optimize your content for maximum impact."
-                className="text-2xl md:text-3xl lg:text-3xl xxl:text-4xl font-bold leading-tight text-foreground"
+                className="text-2xl md:text-3xl lg:text-2xl xl:text-2xl 2xl:text-3xl xxl:text-4xl font-bold leading-tight text-black"
               />
 
               {/* Description */}
-              <p className="text-base lg:text-base text-foreground/80 leading-relaxed">
+              <p className="text-base lg:text-base text-black leading-relaxed">
                 Take full control of your social media presence across all platforms. Plan, schedule, and optimize your content to reach the right audience. With WapSera, your posts work smarter, engage more, and deliver maximum impact.
               </p>
 
@@ -209,18 +209,18 @@ const AutomationSection = () => {
 
             {/* Image with Vectors - Positioned Below Content */}
             <div ref={image2Ref} className="relative">
-              {/* Main Image */}
-              <div className="relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden pt-8 lg:pt-10 flex justify-center">
+              {/* Main Image with Teal Background */}
+              <div className="relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden pt-8 lg:pt-10 xl:px-10 flex justify-center">
                 <img
                   src={contentPlanning}
-                  alt="Content planning mockup"
-                  className=""
+                  alt="Social media automation mockup"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
               {/* Decorative Vectors */}
               {/* Vector 1: Top-left with gap */}
-              <div className="absolute -top-6 -left-2 lg:-top-2 lg:-left-2 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute -top-6 -left-2 lg:-top-2 lg:-left-2 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector1}
                   alt=""
@@ -229,7 +229,7 @@ const AutomationSection = () => {
               </div>
 
               {/* Vector 2: Left-center */}
-              <div className="absolute top-1/2 -translate-y-1/2 -left-8 lg:-left-4 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute top-1/2 -translate-y-1/2 -left-8 lg:-left-4 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector2}
                   alt=""
@@ -247,7 +247,7 @@ const AutomationSection = () => {
               </div>
 
               {/* Vector 4: Bottom-right with gap */}
-              <div className="absolute -bottom-6 -right-6 lg:-bottom-2 lg:-right-6 w-12 h-12 lg:w-14 lg:h-14">
+              <div className="absolute -bottom-6 -right-6 lg:-bottom-2 lg:-right-6 w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12">
                 <img
                   src={vector4}
                   alt=""

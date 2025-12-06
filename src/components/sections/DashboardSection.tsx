@@ -79,7 +79,7 @@ const DashboardSection = () => {
               </div>
 
               {/* Vector 3: Below the image - Eye/Circle element */}
-              <div className="absolute -bottom-12 left-4 lg:-bottom-16 lg:left-6 w-16 h-16 lg:w-20 lg:h-20 z-10">
+              <div className="absolute -bottom-12 left-4 lg:-bottom-16 lg:left-6 w-16 h-16 lg:w-16 lg:h-16 z-10">
                 <img
                   src={vector3}
                   alt=""
@@ -89,7 +89,7 @@ const DashboardSection = () => {
             </div>
 
             {/* Right - Content */}
-            <div ref={contentRef} className="space-y-5 lg:space-y-6 relative">
+            <div ref={contentRef} className="space-y-5 lg:space-y-4 relative">
               {/* Vector 2: Above content - Dotted pattern - Moved up and left */}
               <div className="absolute -top-12 -right-4 lg:-top-16 lg:-right-4 w-12 h-12 lg:w-16 lg:h-16 z-10">
                 <img
@@ -100,7 +100,7 @@ const DashboardSection = () => {
               </div>
 
               {/* Tag */}
-              <div className="inline-block bg-foreground px-5 py-2 rounded-full font-semibold text-green-500">
+              <div className="inline-block bg-black px-5 py-2 rounded-full font-semibold text-primary">
                 Social media management
               </div>
 
@@ -108,11 +108,11 @@ const DashboardSection = () => {
               <AnimatedHeading
                 tag="h2"
                 text="A powerful and flexible social media tool built to adapt to your goals, your platforms, and your way of working."
-                className="text-2xl md:text-2xl lg:text-3xl xxl:text-4xl font-bold leading-tight text-foreground"
+                className="text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl xxl:text-4xl font-bold leading-tight text-black"
               />
 
               {/* Description */}
-              <p className="text-normal leading-relaxed max-w-2xl">
+              <p className="xl:text-sm lg:text-sm xxl:text-base leading-relaxed max-w-2xl">
                 Plan your posts, automate your workflow, and keep every channel active. Stay consistent across platforms without the stress of manual posting. WapSera keeps you organized while your content works for you.
               </p>
 

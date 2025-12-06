@@ -133,7 +133,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-12 lg:py-16 xxl:py-24 overflow-hidden bg-background">
+    <section ref={sectionRef} className="relative py-12 lg:py-12 xl:py-16 overflow-hidden">
       {/* Container for side margins */}
       <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Header Section */}
@@ -143,7 +143,7 @@ const PricingSection = () => {
             <AnimatedHeading
               tag="h2"
               text="Flexible Plans for Every Brand and Creator."
-              className="text-3xl md:text-4xl lg:text-5xl xxl:text-6xl lg:max-w-2xl xxl:max-w-3xl font-extrabold leading-tight text-foreground"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-5xl xxl:text-6xl lg:max-w-2xl xxl:max-w-3xl font-extrabold leading-tight text-foreground"
             />
           </div>
 

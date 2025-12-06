@@ -41,8 +41,8 @@
   --orange: #FF5E00;
   --teal: #47E8CB;
 
-  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
-  --shadow-lime: 0 8px 32px rgba(173,255,47,0.2);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lime: 0 8px 32px rgba(173, 255, 47, 0.2);
 }
 
 @layer base {
@@ -51,24 +51,30 @@
     cursor: none;
   }
 
+  /* Variable font that supports weights 200-800 */
   @font-face {
-  font-family: 'PlusJatkaraSans';
-  src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
+    font-family: 'PlusJakartaSans';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+  }
 
+  /* Variable font italic for weights 200-800 */
   @font-face {
-  font-family: 'PlusJatkaraSans';
-  src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
-  font-weight: 400;
-}
+    font-family: 'PlusJakartaSans';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 800;
+    font-style: italic;
+    font-display: swap;
+  }
 
   body {
-  @apply bg-background text-foreground;
-  font-family: 'PlusJatkaraSans', system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
-}
-  
+    @apply bg-background text-foreground;
+    font-family: 'PlusJakartaSans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
   /* Smooth scrolling */
   html.lenis {
     height: auto;
@@ -92,35 +98,36 @@
 }
 
 @layer utilities {
+
   /* Text reveal animation */
   .text-reveal {
     overflow: hidden;
     display: inline-block;
   }
-  
+
   .text-reveal-word {
     display: inline-block;
     opacity: 0;
     transform: translateY(100%);
   }
-  
+
   /* Button with jumping text */
   .btn-jump {
     position: relative;
     overflow: hidden;
   }
-  
+
   .btn-jump-text {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
+
   .btn-jump:hover .btn-jump-text {
     transform: translateY(-120%);
   }
-  
+
   .btn-jump-duplicate {
     position: absolute;
     inset: 0;
@@ -130,7 +137,7 @@
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
+
   .btn-jump:hover .btn-jump-duplicate {
     transform: translateY(0);
   }

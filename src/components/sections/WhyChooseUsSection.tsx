@@ -75,27 +75,27 @@ const WhyChooseUsSection = () => {
                     <div ref={contentRef} className="space-y-6 lg:space-y-8">
                         {/* Tag and Heading */}
                         <div className="space-y-4">
-                            <p className="text-sm lg:text-base text-foreground/60">Why Choose Us</p>
+                            <p className="text-sm lg:text-base text-black/60">Why Choose Us</p>
                             <AnimatedHeading
                                 tag="h2"
                                 text="Unleash the Full Potential of Your Startup Business."
-                                className="text-3xl md:text-4xl lg:text-5xl xxl:text-6xl font-extrabold leading-tight text-foreground"
+                                className="text-3xl md:text-4xl lg:text-5xl xl:text-[40px] xxl:text-6xl font-extrabold leading-tight text-black"
                             />
                         </div>
 
                         {/* Description */}
-                        <p className="text-base lg:text-lg text-foreground/80 leading-relaxed">
+                        <p className="text-base lg:text-base text-black">
                             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.
                         </p>
 
                         {/* Features Grid */}
-                        <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                        <div className="grid md:grid-cols-2 gap-2 lg:gap-2">
                             {features.map((feature, index) => (
-                                <div key={index} className="flex items-center gap-3">
+                                <div key={index} className="flex items-start justify-start gap-2">
                                     <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                                        <Check className="w-3 h-3 lg:w-4 lg:h-4 text-primary-foreground" />
+                                        <Check className="w-3 h-3 lg:w-4 lg:h-4 text-black" />
                                     </div>
-                                    <span className="text-normal lg:text-base font-extrabold text-foreground">{feature}</span>
+                                    <span className="text-base lg:text-base font-extrabold text-black">{feature}</span>
                                 </div>
                             ))}
                         </div>

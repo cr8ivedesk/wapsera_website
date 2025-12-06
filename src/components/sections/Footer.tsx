@@ -1,9 +1,7 @@
-import { Facebook, Instagram, Twitter } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { FaTiktok } from 'react-icons/fa';
-import logo from '@/assets/logo/white-logo.png';
+import logo from '@/assets/logo/wapsera-final-white.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,37 +85,34 @@ const Footer = () => {
   };
 
   return (
-    <footer ref={footerRef} className="bg-[#000000] text-white py-16 lg:py-20 rounded-t-[30px]">
+    <footer ref={footerRef} className="bg-[#000000] text-white pt-16 rounded-t-[30px]">
       <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-8 lg:gap-12 mb-12 lg:mb-16">
 
           {/* Logo and Social */}
-          <div className="footer-section col-span-1 md:col-span-2 lg:col-span-1 text-center lg:text-left">
-            <div className="mb-6 lg:mb-8 flex justify-center lg:justify-start">
-              <img src={logo} alt="Wapsera Logo" className="h-auto w-auto" />
+          <div className="footer-section col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-2 text-center lg:text-left">
+            <div className="mb-6 lg:mb-8 flex items-center justify-center lg:items-start lg:justify-start">
+              <img src={logo} alt="Wapsera Logo" className="h-[100px] xl:h-[150px] w-auto" />
             </div>
-            <div className="flex gap-3 lg:gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col gap-2 lg:ms-10 xl:ms-16">
               <a
                 href="#"
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
+                className="text-xl font-normal hover:text-primary text-white hover:tracking-wider duration-300"
               >
-                <Facebook className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
+                Linkedin
               </a>
               <a
                 href="#"
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
+                className="text-xl font-normal hover:text-primary text-white hover:tracking-wider duration-300"
               >
-                <Instagram className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
+                Instagram
               </a>
               <a
                 href="#"
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-all duration-300 hover:scale-110"
-                aria-label="Instagram"
+                className="text-xl font-normal hover:text-primary text-white hover:tracking-wider duration-300"
               >
-                <Twitter className="w-5 h-5 lg:w-6 lg:h-6 text-primary-foreground" />
+                Google
               </a>
             </div>
           </div>
@@ -130,7 +125,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-lg lg:text-lg text-gray-300 hover:text-primary transition-colors duration-300"
+                    className="text-base font-normal text-white hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -147,7 +142,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-lg lg:text-lg text-gray-300 hover:text-primary transition-colors duration-300"
+                    className="text-base font-normal text-white hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -164,7 +159,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-lg lg:text-lg text-gray-300 hover:text-primary transition-colors duration-300"
+                    className="text-base font-normal text-white hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -181,7 +176,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-lg lg:text-lg text-gray-300 hover:text-primary transition-colors duration-300"
+                    className="text-base font-normal text-white hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -192,29 +187,31 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-6 lg:pt-8 text-center">
-          <p className="text-sm lg:text-base text-gray-500">
+        <div className="border-t border-gray-800 pt-6 lg:pt-8 pb-4 md:pb-0 text-center">
+          <p className="text-sm lg:text-base text-gray-300">
             © 2025 Wapsera.com. All Rights Reserved.
           </p>
         </div>
 
-        {/* Large WAPSERA Text with Cursor-Following Gradient */}
-        <div className="mt-12 lg:mt-16 w-full mb-12">
-          <style>{`
+      </div>
+      {/* Large WAPSERA Text with Cursor-Following Gradient */}
+      <div className="w-screen overflow-hidden pb-20 md:pb-0">
+        <style>{`
             .wapsera-text {
-              font-size: clamp(5rem, 18vw, 16rem);
+              font-size: clamp(6rem, 22vw, 20rem);
               font-weight: 900;
-              line-height: 0.9;
-              letter-spacing: -0.04em;
+              line-height: 0.85;
+              letter-spacing: -0.05em;
               text-align: center;
               cursor: pointer;
               display: block;
               width: 100%;
               user-select: none;
               position: relative;
-              padding: 0 0.5rem;
+              padding: 0;
+              margin: 0;
               transition: all 0.3s ease;
-              background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+              background: linear-gradient(180deg, #0F0F0F 0%, #1b1b1bff 100%);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;
@@ -237,39 +234,37 @@ const Footer = () => {
 
             @media (max-width: 1024px) {
               .wapsera-text {
-                font-size: clamp(4.5rem, 16vw, 13rem);
+                font-size: clamp(5rem, 20vw, 16rem);
               }
             }
 
             @media (max-width: 768px) {
               .wapsera-text {
-                font-size: clamp(3.5rem, 14vw, 9rem);
-                letter-spacing: -0.02em;
+                font-size: clamp(4rem, 18vw, 12rem);
+                letter-spacing: -0.03em;
               }
             }
 
             @media (max-width: 480px) {
               .wapsera-text {
-                font-size: clamp(2.5rem, 12vw, 7rem);
-                padding: 0 0.25rem;
+                font-size: clamp(3rem, 16vw, 8rem);
               }
             }
           `}</style>
-          <div className="w-full">
-            <h2
-              ref={wapseraTextRef}
-              className={`wapsera-text ${isHovering ? 'hovering' : ''}`}
-              onMouseMove={handleMouseMove}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              style={{
-                '--mouse-x': `${mousePosition.x}%`,
-                '--mouse-y': `${mousePosition.y}%`,
-              } as React.CSSProperties}
-            >
-              WAPSERA
-            </h2>
-          </div>
+        <div className="w-full translate-y-1/2">
+          <h2
+            ref={wapseraTextRef}
+            className={`wapsera-text ${isHovering ? 'hovering' : ''}`}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{
+              '--mouse-x': `${mousePosition.x}%`,
+              '--mouse-y': `${mousePosition.y}%`,
+            } as React.CSSProperties}
+          >
+            WAPSERA
+          </h2>
         </div>
       </div>
     </footer>

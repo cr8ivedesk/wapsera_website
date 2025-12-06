@@ -34,10 +34,10 @@ const Signup = () => {
 
                         {/* Heading */}
                         <div className="mb-6 md:mb-8 lg:mb-10">
-                            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-foreground mb-2 leading-tight">
+                            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-black mb-2 leading-tight">
                                 Log in to your personal account
                             </h1>
-                            <p className="text-xs sm:text-sm lg:text-base text-foreground/60 mt-2">
+                            <p className="text-xs sm:text-sm lg:text-base text-black/60 mt-2">
                                 Let's get start with your 30 days free trial
                             </p>
                         </div>
@@ -46,11 +46,11 @@ const Signup = () => {
                         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
                             {/* Email Field */}
                             <div>
-                                <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-foreground mb-2">
+                                <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-black mb-2">
                                     Email Address
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-foreground/40">
+                                    <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-black/40">
                                         <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </div>
                                     <input
@@ -59,7 +59,7 @@ const Signup = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="info@wapsera.com"
-                                        className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-3.5 bg-gray-50 border-0 rounded-xl text-xs sm:text-sm lg:text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                        className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-3.5 bg-gray-50 border-0 rounded-xl text-xs sm:text-sm lg:text-base text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                         required
                                     />
                                 </div>
@@ -67,11 +67,11 @@ const Signup = () => {
 
                             {/* Password Field */}
                             <div>
-                                <label htmlFor="password" className="block text-xs sm:text-sm font-semibold text-foreground mb-2">
+                                <label htmlFor="password" className="block text-xs sm:text-sm font-semibold text-black mb-2">
                                     Password
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-foreground/40">
+                                    <div className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-black/40">
                                         <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </div>
                                     <input
@@ -80,13 +80,13 @@ const Signup = () => {
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         placeholder="••••••••••••••••••••"
-                                        className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 bg-gray-50 border-0 rounded-xl text-xs sm:text-sm lg:text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/20"
+                                        className="w-full pl-10 sm:pl-12 pr-10 sm:pr-12 py-3 sm:py-3.5 bg-gray-50 border-0 rounded-xl text-xs sm:text-sm lg:text-base text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-primary/20"
                                         required
                                     />
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-foreground/40 hover:text-foreground transition-colors"
+                                        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black transition-colors"
                                     >
                                         {showPassword ? <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" /> : <Eye className="w-4 h-4 sm:w-5 sm:h-5" />}
                                     </button>
@@ -97,7 +97,7 @@ const Signup = () => {
                             <div className="text-right">
                                 <Link
                                     to="/forgot-password"
-                                    className="text-xs sm:text-sm text-foreground/60 hover:text-foreground transition-colors"
+                                    className="text-xs sm:text-sm text-black/60 hover:text-black transition-colors"
                                 >
                                     Forgot Password?
                                 </Link>
@@ -117,7 +117,7 @@ const Signup = () => {
 
                         {/* Social Login */}
                         <div className="mt-5 md:mt-6 lg:mt-8">
-                            <p className="text-center text-xs sm:text-sm text-foreground/60 mb-3 sm:mb-4">Or Log in with</p>
+                            <p className="text-center text-xs sm:text-sm text-black/60 mb-3 sm:mb-4">Or Log in with</p>
                             <div className="flex justify-center gap-3 sm:gap-4">
                                 <button className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-gray-200 flex items-center justify-center hover:border-primary hover:bg-primary/5 transition-all duration-300">
                                     <svg className="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24">
@@ -153,9 +153,9 @@ const Signup = () => {
                         </div>
 
                         {/* Sign Up Link */}
-                        <p className="text-center text-xs sm:text-sm text-foreground/60 mt-4 sm:mt-6">
+                        <p className="text-center text-xs sm:text-sm text-black/60 mt-4 sm:mt-6">
                             Don't have an account yet?{' '}
-                            <Link to="/signup" className="text-foreground font-semibold hover:text-primary transition-colors">
+                            <Link to="/signup" className="text-black font-semibold hover:text-primary transition-colors">
                                 Sign up
                             </Link>
                         </p>

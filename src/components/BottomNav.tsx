@@ -222,7 +222,7 @@ const BottomNav = () => {
                 }}
                 className="block py-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 -mx-6 px-6 transition-colors"
               >
-                <h3 className="text-base font-bold text-foreground mb-1">
+                <h3 className="text-base font-bold text-black mb-1">
                   {link.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
