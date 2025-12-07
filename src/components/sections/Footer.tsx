@@ -93,7 +93,7 @@ const Footer = () => {
           {/* Logo and Social */}
           <div className="footer-section col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-2 text-center lg:text-left">
             <div className="mb-6 lg:mb-8 flex items-center justify-center lg:items-start lg:justify-start">
-              <img src={logo} alt="Wapsera Logo" className="h-[100px] xl:h-[150px] w-auto" />
+              <img src={logo} alt="Wapsera Logo" className="h-[80px] xl:h-[130px] w-auto" />
             </div>
             <div className="flex flex-col gap-2 lg:ms-10 xl:ms-16">
               <a
@@ -195,7 +195,7 @@ const Footer = () => {
 
       </div>
       {/* Large WAPSERA Text with Cursor-Following Gradient */}
-      <div className="w-screen overflow-hidden pb-20 md:pb-0">
+      <div className="w-screen overflow-hidden pb-20 md:pb-0 font-extrabold">
         <style>{`
             .wapsera-text {
               font-size: clamp(6rem, 22vw, 20rem);
@@ -211,7 +211,7 @@ const Footer = () => {
               padding: 0;
               margin: 0;
               transition: all 0.3s ease;
-              background: linear-gradient(180deg, #0F0F0F 0%, #1b1b1bff 100%);
+              background: #0F0F0F;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;
