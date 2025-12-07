@@ -10,7 +10,6 @@ export default {
   ],
   prefix: "",
   theme: {
-    // 🟢 UPDATED CONTAINER CONFIG (1980px + Responsive Padding)
     container: {
       center: true,
       padding: {
@@ -20,15 +19,15 @@ export default {
         lg: "2.5rem",
         xl: "3rem",
         "2xl": "3rem",
-        xxl: "4rem", // for 1980px screen
+        xxl: "4rem",
       },
       screens: {
         sm: "640px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-        "2xl": "1400px", // existing container width
-        xxl: "1980px", // FULL 1980PX GRID
+        "2xl": "1400px",
+        xxl: "1980px", 
       },
     },
 

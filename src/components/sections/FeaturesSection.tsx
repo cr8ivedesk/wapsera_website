@@ -80,15 +80,16 @@ const FeaturesSection = () => {
         </div>
 
         {/* Feature Cards */}
+        <div className="flex justify-center px-4">
         <div
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 xl:gap-3 2xl:gap-8 xxl:gap-12"
+          className="flex flex-col md:flex-row lg:flex-row gap-6 lg:gap-8 xl:gap-10 2xl:gap-24 xxl:gap-24 items-start"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="feature-card flex items-center gap-5 xxl:gap-8 p-6 lg:p-4 xxl:p-8 hover:-translate-y-1 transition-all duration-300"
+                className="feature-card flex items-center justify-center gap-5 xxl:gap-8 p-6 lg:p-4 xxl:p-8 hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Icon Box */}
                 <div
@@ -117,9 +118,9 @@ const FeaturesSection = () => {
             );
           })}
         </div>
-
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
