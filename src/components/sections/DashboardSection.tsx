@@ -51,7 +51,7 @@ const DashboardSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative lg:py-18 overflow-hidden">
+    <section ref={sectionRef} className="relative lg:py-18 overflow-hidden animate-float">
       {/* Purple background container - narrower width */}
       <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         <div className="bg-[#F9F6FF] rounded-3xl lg:rounded-[2.5rem] px-6 lg:px-12 xxl:px-16 py-16 lg:py-20">

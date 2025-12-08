@@ -159,7 +159,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 animate-float">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -179,7 +179,7 @@ const PricingSection = () => {
               </div>
 
               {/* Choose Plan Button */}
-              <Button className="w-full bg-foreground hover:bg-foreground/90 text-green-500 font-semibold py-4 lg:py-7 rounded-full mb-6 lg:mb-8 flex items-center justify-center gap-2">
+              <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-4 lg:py-7 rounded-full mb-6 lg:mb-8 flex items-center justify-center gap-2">
                 Choose Plan
                 <ArrowRight className="w-5 h-5 rounded-full bg-primary text-primary-foreground p-1" />
               </Button>

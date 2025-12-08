@@ -41,18 +41,18 @@ const CTASection = () => {
           <img
             src={EllipseCircle}
             alt=""
-            className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 opacity-70 pointer-events-none -translate-x-1/4 -translate-y-1/4"
+            className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 lg:w-auto lg:h-auto opacity-70 pointer-events-none -translate-x-1/3 -translate-y-1/3"
             style={{ filter: 'blur(20px)' }}
           />
           <div className="grid lg:grid-cols-2 gap-x-16 items-center bg-dark-bg rounded-3xl overflow-hidden">
             {/* Left - Content */}
             <div className="space-y-8 p-8">
               <div className="animate-item">
-                <p className="text-green-500 mb-2">Pricing Plan</p>
+                <p className="text-primary mb-2">Pricing Plan</p>
                 <AnimatedHeading
                   tag="h2"
                   text="Let's Make Something Awesome Together"
-                  className="text-4xl md:text-5xl font-bold leading-tight"
+                  className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl xxl:text-6xl font-extrabold leading-tight text-white"
                 />
               </div>
 

@@ -88,7 +88,7 @@ const AutomationSection = () => {
   }, []);
 
   return (
-    <section className="relative py-12 lg:py-12 xl:py-16 overflow-hidden">
+    <section className="relative py-12 lg:py-12 xl:py-16 overflow- animate-float">
       {/* Container for side margins */}
       <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-12 xxl:px-16">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">

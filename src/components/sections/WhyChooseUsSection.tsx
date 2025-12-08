@@ -79,7 +79,7 @@ const WhyChooseUsSection = () => {
                             <AnimatedHeading
                                 tag="h2"
                                 text="Unleash the Full Potential of Your Startup Business."
-                                className="text-3xl md:text-4xl lg:text-5xl xl:text-[40px] xxl:text-6xl font-extrabold leading-tight text-black"
+                                className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl xxl:text-6xl font-extrabold leading-tight text-black"
                             />
                         </div>
 

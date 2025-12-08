@@ -141,4 +141,22 @@
   .btn-jump:hover .btn-jump-duplicate {
     transform: translateY(0);
   }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
 }
