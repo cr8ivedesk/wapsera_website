@@ -115,7 +115,7 @@ const AutomationSection = () => {
               </p>
 
               {/* CTA Button */}
-              <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
                   Learn More
                   <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
@@ -197,7 +197,7 @@ const AutomationSection = () => {
               </p>
 
               {/* CTA Button */}
-              <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
                   Learn More
                   <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">

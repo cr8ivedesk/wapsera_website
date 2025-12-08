@@ -36,7 +36,7 @@ const BackToTop = () => {
         fixed bottom-20 right-6 lg:right-8 z-50
         w-12 h-12 lg:w-14 lg:h-14
         bg-primary hover:bg-primary/90
-        text-primary-foreground
+        text-black
         rounded-full
         shadow-lg hover:shadow-xl
         flex items-center justify-center

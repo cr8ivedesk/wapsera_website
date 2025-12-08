@@ -106,7 +106,7 @@ const Login = () => {
                             {/* Login Button */}
                             <button
                                 type="submit"
-                                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 sm:py-3.5 rounded-full text-sm sm:text-base lg:text-lg transition-all duration-300 flex items-center justify-center gap-2 group mt-4 sm:mt-6"
+                                className="w-full bg-primary hover:bg-primary/90 text-black font-semibold py-3 sm:py-3.5 rounded-full text-sm sm:text-base lg:text-lg transition-all duration-300 flex items-center justify-center gap-2 group mt-4 sm:mt-6"
                             >
                                 Login
                                 <span className="w-5 h-5 sm:w-6 sm:h-6 bg-black rounded-full flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-transform duration-300">

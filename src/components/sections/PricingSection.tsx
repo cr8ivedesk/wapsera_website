@@ -1,6 +1,6 @@
-import { Check, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Check, ArrowUpRight } from 'lucide-react';
 import { Button } from '../ui/button';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedHeading from '../ui/AnimatedHeading';
@@ -11,6 +11,56 @@ const PricingSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+
+  // State for hover direction offsets
+  const [cardOffsets, setCardOffsets] = useState<{ [key: number]: { x: number; y: number } }>({
+    0: { x: 0, y: 0 },
+    1: { x: 0, y: 0 },
+    2: { x: 0, y: 0 },
+  });
+
+  // Handle mouse enter - detect direction
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    // Get cursor position relative to card
+    const cursorX = e.clientX - rect.left;
+    const cursorY = e.clientY - rect.top;
+
+    // Get card center
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Calculate direction from center
+    const deltaX = cursorX - centerX;
+    const deltaY = cursorY - centerY;
+
+    let offsetX = 0;
+    let offsetY = 0;
+
+    // Determine which side cursor entered from
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      // Left or Right
+      offsetX = deltaX > 0 ? 10 : -10;
+    } else {
+      // Top or Bottom
+      offsetY = deltaY > 0 ? 10 : -10;
+    }
+
+    setCardOffsets(prev => ({
+      ...prev,
+      [index]: { x: offsetX, y: offsetY }
+    }));
+  };
+
+  // Handle mouse leave - reset offset
+  const handleMouseLeave = (index: number) => {
+    setCardOffsets(prev => ({
+      ...prev,
+      [index]: { x: 0, y: 0 }
+    }));
+  };
 
   useEffect(() => {
     // Animate header
@@ -31,7 +81,7 @@ const PricingSection = () => {
     );
 
     // Animate pricing cards with directional animations
-    const cards = cardsRef.current?.querySelectorAll('.pricing-card');
+    const cards = cardsRef.current?.querySelectorAll('.pricing-card-wrapper');
 
     if (cards) {
       // Set initial state for all cards to prevent flash
@@ -148,53 +198,73 @@ const PricingSection = () => {
           </div>
 
           {/* Get Started Button */}
-          <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+          <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
             <span className="flex items-center gap-3">
               Get Started
               <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
+                <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
             </span>
           </Button>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 animate-float">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {plans.map((plan, index) => (
+            // Outer wrapper - has float animation
             <div
               key={index}
-              className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-10 drop-shadow-md transition-all duration-300 hover:-translate-y-2"
+              className="pricing-card-wrapper animate-float"
+              style={{
+                willChange: 'transform',
+                userSelect: 'none',
+                touchAction: 'none',
+                cursor: 'grab',
+              }}
+              onMouseEnter={(e) => handleMouseEnter(e, index)}
+              onMouseLeave={() => handleMouseLeave(index)}
             >
-              {/* Plan Header */}
-              <div className="mb-6 lg:mb-8">
-                <p className="text-normal text-foreground/60 mb-1">{plan.name}</p>
-                <h3 className="text-xl lg:text-2xl xxl:text-3xl font-extrabold mb-6">{plan.subtitle}</h3>
+              {/* Inner card - moves based on hover direction */}
+              <div
+                className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-10 drop-shadow-md h-full"
+                style={{
+                  transform: cardOffsets[index]?.x || cardOffsets[index]?.y
+                    ? `translateX(${cardOffsets[index].x}px) translateY(${cardOffsets[index].y}px)`
+                    : 'none',
+                  transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                }}
+              >
+                {/* Plan Header */}
+                <div className="mb-6 lg:mb-8">
+                  <p className="text-normal text-foreground/60 mb-1">{plan.name}</p>
+                  <h3 className="text-xl lg:text-2xl xxl:text-3xl font-extrabold mb-6">{plan.subtitle}</h3>
 
-                {/* Price */}
-                <div className="mb-6">
-                  <span className='text-5xl lg:text-5xl font-bold text-[#9CE335]'>
-                    {plan.price}
-                  </span>
-                </div>
-              </div>
-
-              {/* Choose Plan Button */}
-              <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-4 lg:py-7 rounded-full mb-6 lg:mb-8 flex items-center justify-center gap-2">
-                Choose Plan
-                <ArrowRight className="w-5 h-5 rounded-full bg-primary text-primary-foreground p-1" />
-              </Button>
-
-              {/* Features List */}
-              <div className="space-y-4">
-                <p className="font-semibold text-foreground mb-4">Include:</p>
-                {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary-foreground" />
-                    </div>
-                    <span className="text-sm lg:text-sm text-foreground/80">{feature}</span>
+                  {/* Price */}
+                  <div className="mb-6">
+                    <span className="text-4xl lg:text-5xl xl:text-5xl font-bold text-[#9CE335]">
+                      {plan.price}
+                    </span>
                   </div>
-                ))}
+                </div>
+
+                {/* Choose Plan Button */}
+                <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-4 lg:py-7 rounded-full mb-6 lg:mb-8 flex items-center justify-between px-4">
+                  <span className="flex-1 text-center ms-5">Choose Plan</span>
+                  <span className="w-5 h-5 lg:w-5 lg:h-5 2xl:w-7 2xl:h-7 rounded-full bg-primary flex-shrink-0"></span>
+                </Button>
+
+                {/* Features List */}
+                <div className="space-y-4">
+                  <p className="font-semibold text-black text-lg mb-4">Include:</p>
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm lg:text-sm text-foreground/80">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

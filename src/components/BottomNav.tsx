@@ -76,7 +76,7 @@ const BottomNav = () => {
     <>
       {/* Desktop Navigation - Hidden on mobile, stays visible above social panel */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] hidden md:block">
-        <div className="bg-white/30 backdrop-blur-[40px] border border-black/10 rounded-full px-6 py-3">
+        <div className="bg-white/30 backdrop-blur-[8px] border border-black/10 rounded-full px-5 py-3">
           <div className="flex items-center space-x-2">
             <a href="#home" className="group relative px-4 py-2 text-sm font-normal text-black transition-colors">
               Home
@@ -110,7 +110,7 @@ const BottomNav = () => {
               Contact
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </a>
-            <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+            <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-base font-semibold rounded-full">
               <span className="flex items-center gap-3">
                 Try it for free
                 <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">

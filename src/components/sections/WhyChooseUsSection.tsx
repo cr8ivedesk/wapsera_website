@@ -101,12 +101,12 @@ const WhyChooseUsSection = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+                        <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                             <span className="flex items-center gap-3">
                                 Discover More
                                 <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
+                                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                </span>
                             </span>
                         </Button>
                     </div>

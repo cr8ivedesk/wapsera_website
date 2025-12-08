@@ -1,55 +1,88 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/logo/logo.png';
 import w_logo from '../assets/logo/wapsera-final-black.png';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      // Only show the sticky header after scrolling past initial content
+      if (currentScrollY > 100) {
+        // Scrolling UP - show header
+        if (currentScrollY < lastScrollY.current) {
+          setShowHeader(true);
+        }
+        // Scrolling DOWN - hide header
+        else {
+          setShowHeader(false);
+        }
+      } else {
+        // Near the top - hide sticky header (original header is visible)
+        setShowHeader(false);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-        ${scrolled ? 'bg-white/30 backdrop-blur-[40px]' : 'bg-transparent'}
-      `}
-    >
-      <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center">
+    <>
+      {/* Original Static Header - part of document flow */}
+      <nav className="relative top-0 left-0 right-0 z-40 bg-transparent">
+        <div className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center">
+          {/* Mobile Logo - Centered w_logo (visible only on small screens) */}
+          <img
+            src={w_logo}
+            alt="Wapsera Logo"
+            className="w-32 md:hidden"
+          />
 
-        {/* Mobile Logo - Centered w_logo (visible only on small screens) */}
-        <img
-          src={w_logo}
-          alt="Wapsera Logo"
-          className="w-32 md:hidden"
-        />
+          {/* Desktop Logo (hidden on small screens) */}
+          <img
+            src={Logo}
+            alt="Logo"
+            className="hidden md:block md:w-36 lg:w-40"
+          />
+        </div>
+      </nav>
 
-        {/* Desktop Logo (hidden on small screens) */}
-        <img
-          src={Logo}
-          alt="Logo"
-          className="hidden md:block md:w-36 lg:w-40"
-        />
+      {/* Sticky Header with Glossy Effect - appears on scroll up */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out
+          ${showHeader ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+        `}
+      >
+        {/* Glossy backdrop effect - similar to bottom blur */}
+        <div className="absolute inset-0 backdrop-blur-[60px] h-60 [mask-image:linear-gradient(to_top,transparent,black)]" />
 
-        {/* CTA Button (hidden on small screens) */}
-        {/* <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
-          <span className="flex items-center gap-3">
-            Try it for free
-            <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-              <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-          </span>
-        </Button> */}
-      </div>
-    </nav>
+        {/* Header content */}
+        <div className="relative container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center">
+          {/* Mobile Logo - Centered w_logo (visible only on small screens) */}
+          <img
+            src={w_logo}
+            alt="Wapsera Logo"
+            className="w-32 md:hidden"
+          />
+
+          {/* Desktop Logo (hidden on small screens) */}
+          <img
+            src={Logo}
+            alt="Logo"
+            className="hidden md:block md:w-36 lg:w-40"
+          />
+        </div>
+      </nav>
+    </>
   );
 };
 
 export default Header;
-

@@ -63,7 +63,7 @@ const CTASection = () => {
               <div className="animate-item space-y-6">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-primary-foreground" />
+                    <Check className="w-4 h-4 text-black" />
                   </div>
                   <div>
                     <h3 className="font-extrabold text-2xl mb-1">Proven Expertise</h3>
@@ -73,7 +73,7 @@ const CTASection = () => {
 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-primary-foreground" />
+                    <Check className="w-4 h-4 text-black" />
                   </div>
                   <div>
                     <h3 className="font-extrabold text-2xl mb-1">Innovation and Adaptability</h3>
@@ -83,7 +83,7 @@ const CTASection = () => {
 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-primary-foreground" />
+                    <Check className="w-4 h-4 text-black" />
                   </div>
                   <div>
                     <h3 className="font-extrabold text-2xl mb-1">Comprehensive Services</h3>
@@ -92,7 +92,7 @@ const CTASection = () => {
                 </div>
               </div>
 
-              <Button className="group bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-4 py-4 pl-6 text-lg rounded-full">
+              <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
                   Discover More
                   <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
