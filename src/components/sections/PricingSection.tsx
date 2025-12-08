@@ -226,7 +226,7 @@ const PricingSection = () => {
             >
               {/* Inner card - moves based on hover direction */}
               <div
-                className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-8 lg:p-10 drop-shadow-md h-full"
+                className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-6 lg:p-8 drop-shadow-md h-full"
                 style={{
                   transform: cardOffsets[index]?.x || cardOffsets[index]?.y
                     ? `translateX(${cardOffsets[index].x}px) translateY(${cardOffsets[index].y}px)`
@@ -235,12 +235,12 @@ const PricingSection = () => {
                 }}
               >
                 {/* Plan Header */}
-                <div className="mb-6 lg:mb-8">
-                  <p className="text-normal text-foreground/60 mb-1">{plan.name}</p>
+                <div className="mb-4 lg:mb-5">
+                  <p className="text-normal text-dark">{plan.name}</p>
                   <h3 className="text-xl lg:text-2xl xxl:text-3xl font-extrabold mb-6">{plan.subtitle}</h3>
 
                   {/* Price */}
-                  <div className="mb-6">
+                  <div className="mb-2">
                     <span className="text-4xl lg:text-5xl xl:text-5xl font-bold text-[#9CE335]">
                       {plan.price}
                     </span>
@@ -248,7 +248,7 @@ const PricingSection = () => {
                 </div>
 
                 {/* Choose Plan Button */}
-                <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-4 lg:py-7 rounded-full mb-6 lg:mb-8 flex items-center justify-between px-4">
+                <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-5 lg:py-6 rounded-[30px] mb-4 lg:mb-5 flex items-center justify-between px-4">
                   <span className="flex-1 text-center ms-5">Choose Plan</span>
                   <span className="w-5 h-5 lg:w-5 lg:h-5 2xl:w-7 2xl:h-7 rounded-full bg-primary flex-shrink-0"></span>
                 </Button>
@@ -261,7 +261,7 @@ const PricingSection = () => {
                       <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm lg:text-sm text-foreground/80">{feature}</span>
+                      <span className="text-sm lg:text-base xl:text-lg text-dark font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>

@@ -1,8 +1,10 @@
 import { ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useLenis } from './SmoothScroll';
 
 const BackToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const lenis = useLenis();
 
     // Show button when page is scrolled down
     useEffect(() => {
@@ -21,12 +23,17 @@ const BackToTop = () => {
         };
     }, []);
 
-    // Scroll to top smoothly
+    // Scroll to top using Lenis for smooth animation
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        if (lenis) {
+            lenis.scrollTo(0, { duration: 1.5 });
+        } else {
+            // Fallback to native scroll if Lenis not available
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        }
     };
 
     return (
