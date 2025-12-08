@@ -200,9 +200,15 @@ const PricingSection = () => {
           {/* Get Started Button */}
           <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
             <span className="flex items-center gap-3">
-              Get Started
+              {/* Text slide animation */}
+              <span className="relative overflow-hidden h-[1.2em]">
+                <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                  <span className="h-[1.2em] leading-[1.2em]">Get Started</span>
+                  <span className="h-[1.2em] leading-[1.2em]">Get Started</span>
+                </span>
+              </span>
               <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="text-white" />
               </span>
             </span>
           </Button>
@@ -226,7 +232,7 @@ const PricingSection = () => {
             >
               {/* Inner card - moves based on hover direction */}
               <div
-                className="pricing-card bg-card border border-border rounded-3xl lg:rounded-[2.5rem] p-6 lg:p-8 drop-shadow-md h-full"
+                className="pricing-card bg-card border border-border rounded-3xl lg:rounded-4xl p-6 lg:p-8 drop-shadow-md h-full"
                 style={{
                   transform: cardOffsets[index]?.x || cardOffsets[index]?.y
                     ? `translateX(${cardOffsets[index].x}px) translateY(${cardOffsets[index].y}px)`
@@ -248,9 +254,9 @@ const PricingSection = () => {
                 </div>
 
                 {/* Choose Plan Button */}
-                <Button className="w-full bg-black text-primary lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-5 lg:py-6 rounded-[30px] mb-4 lg:mb-5 flex items-center justify-between px-4">
+                <Button className="group/btn w-full bg-black hover:bg-primary text-primary hover:text-black lg:text-lg 2xl:text-xl xxl:text-xl font-semibold py-5 lg:py-6 rounded-[30px] mb-4 lg:mb-5 flex items-center justify-between px-4 transition-all duration-300 ease-out hover:scale-[1.02]">
                   <span className="flex-1 text-center ms-5">Choose Plan</span>
-                  <span className="w-5 h-5 lg:w-5 lg:h-5 2xl:w-7 2xl:h-7 rounded-full bg-primary flex-shrink-0"></span>
+                  <span className="w-5 h-5 lg:w-5 lg:h-5 2xl:w-7 2xl:h-7 rounded-full bg-primary group-hover/btn:bg-black flex-shrink-0 transition-colors duration-300"></span>
                 </Button>
 
                 {/* Features List */}

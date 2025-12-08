@@ -34,7 +34,7 @@ const CTASection = () => {
   return (
     <>
       {/* Dark CTA Section */}
-      <section className="lg:py-24 py-8 bg-dark-bg text-dark-foreground rounded-[50px]">
+      <section className="lg:py-24 py-8 bg-dark-bg text-dark-foreground sm:rounded-[30px] md:rounded-[40px] lg:rounded-[50px]">
 
         <div ref={sectionRef} className="container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] mx-auto px-6 relative z-10">
           {/* Decorative Ellipse Circle - Top Left for Green Glow */}
@@ -94,10 +94,16 @@ const CTASection = () => {
 
               <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
-                  Discover More
-                  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
+                  {/* Text slide animation */}
+              <span className="relative overflow-hidden h-[1.2em]">
+                <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                  <span className="h-[1.2em] leading-[1.2em]">Discover More</span>
+                  <span className="h-[1.2em] leading-[1.2em]">Discover More</span>
+                </span>
+              </span>
+              <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                <ArrowUpRight className="text-white" />
+              </span>
                 </span>
               </Button>
             </div>

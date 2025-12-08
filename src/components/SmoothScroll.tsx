@@ -1,14 +1,12 @@
-import { createContext, useContext, useEffect, useRef, ReactNode } from 'react';
+import { createContext, useContext, useEffect, ReactNode, useRef, useState } from 'react';
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Create context for Lenis instance
 const SmoothScrollContext = createContext<Lenis | null>(null);
 
-// Hook to access Lenis instance
 export const useLenis = () => useContext(SmoothScrollContext);
 
 interface SmoothScrollProviderProps {
@@ -16,66 +14,60 @@ interface SmoothScrollProviderProps {
 }
 
 export const SmoothScrollProvider = ({ children }: SmoothScrollProviderProps) => {
-    const lenisRef = useRef<Lenis | null>(null);
+    const [lenis, setLenis] = useState<Lenis | null>(null);
+    const rafIdRef = useRef<number | null>(null);
 
     useEffect(() => {
-        // Initialize Lenis with optimized settings for ultra-smooth scroll
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        // Ultra smooth configuration
+        const lenisInstance = new Lenis({
+            duration: 1.6,
+            easing: (t) => {
+                // Custom bezier-like easing for buttery smooth scrolling
+                return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+            },
             orientation: 'vertical',
             gestureOrientation: 'vertical',
             smoothWheel: true,
-            wheelMultiplier: 1,
-            touchMultiplier: 2,
+            wheelMultiplier: 0.7,
+            touchMultiplier: 1.2,
+            infinite: false,
         });
 
-        lenisRef.current = lenis;
+        setLenis(lenisInstance);
 
-        // Sync Lenis scroll with GSAP ScrollTrigger
-        lenis.on('scroll', ScrollTrigger.update);
+        // Connect to GSAP ticker for perfect frame sync
+        const tickerCallback = (time: number) => {
+            lenisInstance.raf(time * 1000);
+        };
 
-        // Connect Lenis to GSAP's ticker for frame-perfect updates
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
-        });
-
-        // Disable GSAP's default lag smoothing to prevent conflicts
+        gsap.ticker.add(tickerCallback);
         gsap.ticker.lagSmoothing(0);
 
-        // Setup ScrollTrigger to use Lenis's scroll position
-        ScrollTrigger.scrollerProxy(document.documentElement, {
-            scrollTop(value) {
-                if (arguments.length) {
-                    lenis.scrollTo(value as number, { immediate: true });
-                }
-                return lenis.scroll;
-            },
-            getBoundingClientRect() {
-                return {
-                    top: 0,
-                    left: 0,
-                    width: window.innerWidth,
-                    height: window.innerHeight,
-                };
-            },
-            pinType: document.documentElement.style.transform ? 'transform' : 'fixed',
+        // Update ScrollTrigger on scroll
+        lenisInstance.on('scroll', () => {
+            ScrollTrigger.update();
         });
 
-        // Refresh ScrollTrigger after setup
+        // Handle window resize
+        const handleResize = () => {
+            ScrollTrigger.refresh();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Initial refresh
         ScrollTrigger.refresh();
 
+        // Cleanup
         return () => {
-            lenis.destroy();
-            gsap.ticker.remove((time) => {
-                lenis.raf(time * 1000);
-            });
-            ScrollTrigger.clearScrollMemory();
+            gsap.ticker.remove(tickerCallback);
+            window.removeEventListener('resize', handleResize);
+            lenisInstance.destroy();
         };
     }, []);
 
     return (
-        <SmoothScrollContext.Provider value={lenisRef.current}>
+        <SmoothScrollContext.Provider value={lenis}>
             {children}
         </SmoothScrollContext.Provider>
     );

@@ -75,6 +75,17 @@
     overflow-x: hidden;
   }
 
+  html {
+    scroll-behavior: auto !important;
+    /* Disable native smooth scroll */
+  }
+
+  html,
+  body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: auto;
+  }
+
   /* Smooth scrolling */
   html.lenis {
     height: auto;
@@ -143,31 +154,33 @@
   }
 
   @keyframes float {
-  0% {
-    transform: translateY(0);
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
   }
-  50% {
-    transform: translateY(-20px);
+
+  .animate-float {
+    animation: float 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   }
-  100% {
-    transform: translateY(0);
+
+  /* Stagger animation delay for each card */
+  .pricing-card-wrapper:nth-child(1) {
+    animation-delay: 0s;
   }
-}
 
-.animate-float {
-  animation: float 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-}
+  .pricing-card-wrapper:nth-child(2) {
+    animation-delay: 0.5s;
+  }
 
-/* Stagger animation delay for each card */
-.pricing-card-wrapper:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.pricing-card-wrapper:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.pricing-card-wrapper:nth-child(3) {
-  animation-delay: 1s;
-}
+  .pricing-card-wrapper:nth-child(3) {
+    animation-delay: 1s;
+  }
 }

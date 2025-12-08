@@ -75,7 +75,7 @@ const WhyChooseUsSection = () => {
                     <div ref={contentRef} className="space-y-6 lg:space-y-8">
                         {/* Tag and Heading */}
                         <div className="space-y-4">
-                            <p className="text-sm lg:text-base text-black/60">Why Choose Us</p>
+                            <p className="text-sm lg:text-lg text-dark font-medium">Why Choose Us</p>
                             <AnimatedHeading
                                 tag="h2"
                                 text="Unleash the Full Potential of Your Startup Business."
@@ -84,7 +84,7 @@ const WhyChooseUsSection = () => {
                         </div>
 
                         {/* Description */}
-                        <p className="text-base lg:text-base text-black">
+                        <p className="text-base lg:text-base text-dark">
                             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.
                         </p>
 
@@ -103,9 +103,15 @@ const WhyChooseUsSection = () => {
                         {/* CTA Button */}
                         <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                             <span className="flex items-center gap-3">
-                                Discover More
+                                {/* Text slide animation */}
+                                <span className="relative overflow-hidden h-[1.2em]">
+                                    <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                                        <span className="h-[1.2em] leading-[1.2em]">Discover More</span>
+                                        <span className="h-[1.2em] leading-[1.2em]">Discover More</span>
+                                    </span>
+                                </span>
                                 <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                    <ArrowUpRight className="text-white" />
                                 </span>
                             </span>
                         </Button>

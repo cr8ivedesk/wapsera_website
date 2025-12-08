@@ -94,7 +94,7 @@ const AutomationSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
 
           {/* Left Card - Social Media Automation */}
-          <div ref={section1Ref} className="relative bg-[#FFF8F0] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10">
+          <div ref={section1Ref} className="relative bg-[#FFF8F0] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10 transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-orange-200/50 hover:-translate-y-2 hover:scale-[1.01]">
             {/* Content - Positioned at Top */}
             <div ref={content1Ref} className="space-y-5 lg:space-y-6 mb-10 lg:mb-8 xl:mb-8">
               {/* Tag */}
@@ -117,9 +117,15 @@ const AutomationSection = () => {
               {/* CTA Button */}
               <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
-                  Learn More
+                  {/* Text slide animation */}
+                  <span className="relative overflow-hidden h-[1.2em]">
+                    <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                      <span className="h-[1.2em] leading-[1.2em]">Learn More</span>
+                      <span className="h-[1.2em] leading-[1.2em]">Learn More</span>
+                    </span>
+                  </span>
                   <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="text-white" />
                   </span>
                 </span>
               </Button>
@@ -176,7 +182,7 @@ const AutomationSection = () => {
           </div>
 
           {/* Right Card - Content Planning */}
-          <div ref={section2Ref} className="relative bg-[#F0FFF4] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10">
+          <div ref={section2Ref} className="relative bg-[#F0FFF4] rounded-3xl lg:rounded-[2.5rem] py-10 lg:py-10 px-6 lg:px-8 xl:px-8 xl:py-10 transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-green-200/50 hover:-translate-y-2 hover:scale-[1.01]">
             {/* Content - Positioned at Top */}
             <div ref={content2Ref} className="space-y-5 lg:space-y-6 mb-10 lg:mb-12">
               {/* Tag */}
@@ -199,9 +205,15 @@ const AutomationSection = () => {
               {/* CTA Button */}
               <Button className="group bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
-                  Learn More
+                  {/* Text slide animation */}
+                  <span className="relative overflow-hidden h-[1.2em]">
+                    <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                      <span className="h-[1.2em] leading-[1.2em]">Learn More</span>
+                      <span className="h-[1.2em] leading-[1.2em]">Learn More</span>
+                    </span>
+                  </span>
                   <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="text-white" />
                   </span>
                 </span>
               </Button>

@@ -198,7 +198,7 @@ const Footer = () => {
       <div className="w-screen overflow-hidden pb-20 md:pb-0 font-extrabold">
         <style>{`
             .wapsera-text {
-              font-size: clamp(6rem, 22vw, 20rem);
+              font-size: 22vw;
               font-weight: 900;
               line-height: 0.85;
               letter-spacing: -0.05em;
@@ -211,7 +211,7 @@ const Footer = () => {
               padding: 0;
               margin: 0;
               transition: all 0.3s ease;
-              background: #0F0F0F;
+              background: #141414ff;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;

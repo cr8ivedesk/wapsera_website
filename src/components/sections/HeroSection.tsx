@@ -54,10 +54,16 @@ const HeroSection = () => {
 
               <Button className="group bg-primary text-black font-semibold text-base px-4 py-4 pl-4 text-lg rounded-full">
                 <span className="flex items-center gap-3">
-                  Start Free Account
-                  <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
-                    <ArrowUpRight className="text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </span>
+                  {/* Text slide animation */}
+              <span className="relative overflow-hidden h-[1.2em]">
+                <span className="flex flex-col transition-transform duration-200 delay-100 ease-out group-hover:-translate-y-1/2">
+                  <span className="h-[1.2em] leading-[1.2em]">Start Free Account</span>
+                  <span className="h-[1.2em] leading-[1.2em]">Start Free Account</span>
+                </span>
+              </span>
+              <span className="flex items-center justify-center w-6 h-6 bg-black rounded-full overflow-hidden">
+                <ArrowUpRight className="text-white" />
+              </span>
                 </span>
               </Button>
             </div>

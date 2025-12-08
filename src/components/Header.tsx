@@ -62,7 +62,7 @@ const Header = () => {
         `}
       >
         {/* Glossy backdrop effect - similar to bottom blur */}
-        <div className="absolute inset-0 backdrop-blur-[80px] h-42 [mask-image:linear-gradient(to_top,transparent,black)]" />
+        <div className="absolute inset-0 backdrop-blur-[80px] h-48 [mask-image:linear-gradient(to_top,transparent,black)]" />
 
         {/* Header content */}
         <div className="relative container xl:max-w-[1250px] xxl:max-w-[1700px] 2xl:max-w-[1600px] py-4 flex items-center justify-center">
